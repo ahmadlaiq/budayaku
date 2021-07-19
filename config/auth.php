@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'mahasiswa',
+        'guard' => 'peserta',
         'passwords' => 'users',
     ],
 
@@ -37,20 +37,20 @@ return [
 
     'guards' => [
         // Guard untuk user mahasiswa
-        'mahasiswa' => [
+        'peserta' => [
             'driver' => 'session',
-            'provider' => 'mahasiswa',
+            'provider' => 'peserta',
         ],
 
-        'mahasiswa-api' => [
+        'peserta-api' => [
             'driver' => 'token',
-            'provider' => 'mahasiswa',
+            'provider' => 'peserta',
             'hash' => false,
         ],
         // Guards untuk user Admin
-        'admin' => [
+        'penyelenggara' => [
             'driver'    => 'session',
-            'provider'  => 'admin'
+            'provider'  => 'penyelenggara'
         ],
     ],
 
@@ -73,14 +73,14 @@ return [
 
     'providers' => [
         // Provider Mahasiswa
-        'mahasiswa' => [
+        'peserta' => [
             'driver' => 'eloquent',
-            'model' => App\Mahasiswa::class,
+            'model' => App\Peserta::class,
         ],
         // Provider Admin
-        'admin'     => [
+        'penyelenggara'     => [
             'driver'  => 'eloquent',
-            'model' => App\Admin::class
+            'model' => App\Penyelenggara::class
         ]
 
 

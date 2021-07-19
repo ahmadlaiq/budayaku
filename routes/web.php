@@ -14,45 +14,49 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->intended('/login');
+    return view('home.index');
 });
-/**
- * Authentication Route
- */
 
-// hanya untuk tamu yg belum login
-Route::get('/login', 'Auth\AuthController@getLogin')->middleware('guest')->name('login');
-Route::post('/login', 'Auth\AuthController@postLogin');
-// Register
-Route::get('/register', 'Auth\AuthController@getRegister')->middleware('guest')->name('register');
-Route::post('/register', 'Auth\AuthController@postRegister');
-// Logout
-Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
+//Auth Peserta
+Route::get('peserta/login', 'Auth\PesertaController@LoginPage')->name('peserta.login');
+Route::post('peserta/login', 'Auth\PesertaController@Login');
+Route::get('peserta/register', 'Auth\PesertaController@RegisterPage')->name('peserta.register');
+Route::post('peserta/register', 'Auth\PesertaController@Register');
 
-/**
- *
- */
-
-// Route Mahasiswa GET
-Route::get('/mahasiswa', 'Mahasiswa\MahasiswaController@index')->middleware('auth:mahasiswa');
-Route::get('/mahasiswa/dashboard', 'Mahasiswa\MahasiswaController@index')->middleware('auth:mahasiswa');
-Route::get('/mahasiswa/laporan', 'Mahasiswa\LaporanController@index')->middleware('auth:mahasiswa')->name('laporan');
-Route::get('/mahasiswa/profile', 'Mahasiswa\MahasiswaController@profile')->middleware('auth:mahasiswa')->name('mahasiswa-profile');
-Route::get('/mahasiswa/tutorial', 'Mahasiswa\TutorialController@index')->middleware('auth:mahasiswa')->name('tutorial');
-Route::get('/mahasiswa/riwayat', 'Mahasiswa\RiwayatController@index')->middleware('auth:mahasiswa')->name('riwayat');
+//Auth Penyelenggara
+Route::get('penyelenggara/login', 'Auth\PenyelenggaraController@LoginPage')->name('penyelenggara.login');
+Route::post('penyelenggara/login', 'Auth\PenyelenggaraController@Login');
+Route::get('penyelenggara/register', 'Auth\PenyelenggaraController@RegisterPage')->name('penyelenggara.register');
+Route::post('penyelenggara/register', 'Auth\PenyelenggaraController@Register');
 
 
-// Route Mahasiswa POST
-Route::post('/mahasiswa/laporan', 'Mahasiswa\LaporanController@postLaporan')->middleware('auth:mahasiswa');
+//Auth Admin
+Route::get('admin/p', 'Auth\AdminController@LoginPage')->name('admin.login');
 
-// Route Admin GET
-Route::get('/admin', 'Admin\AdminController@index')->middleware('auth:admin');
-Route::get('/admin/dashboard', 'Admin\AdminController@index')->middleware('auth:admin')->name('admin');
-Route::get('/admin/profile', 'Admin\AdminController@profile')->middleware('auth:admin')->name('admin-profile');
-Route::get('/admin/manage/laporan', 'Admin\manage\LaporanController@index')->middleware('auth:admin')->name('admin-laporan');
-Route::get('/admin/laporan/table/{cat}', 'Admin\manage\LaporanController@json')->middleware('auth:admin');
-Route::get('/admin/laporan/view/{id}', 'Admin\manage\LaporanController@onView')->middleware('auth:admin');
-// Route Admin POST
-Route::post('/admin/laporan/approved', 'Admin\manage\LaporanController@onApproved')->middleware('auth:admin');
-Route::post('/admin/laporan/declined', 'Admin\manage\LaporanController@onDeclined')->middleware('auth:admin');
 
+//Penyelenggara
+Route::group(['middleware' => 'CekPenyelenggaraMiddleware'], function () {
+    Route::get('penyelenggara/logout', 'Auth\PenyelenggaraController@Logout')->name('penyelenggara.logout');
+    Route::get('penyelenggara/dashboard', 'Penyelenggara\DashboardController@DashboardPage')->name('penyelenggara.dashboard');
+    Route::post('penyelenggara/buatkompetisi', 'Penyelenggara\BuatKompetisiController@BuatKompetisi')->name('penyelenggara.buatkompetisi');
+    Route::get('penyelenggara/buatkompetisi', 'Penyelenggara\BuatKompetisiController@BuatKompetisiPage')->name('penyelenggara.buatkompetisi');
+    Route::get('penyelenggara/aturkompetisi', 'Penyelenggara\AturKompetisiController@AturKompetisiPage')->name('penyelenggara.aturkompetisi');
+    Route::get('penyelenggara/pengumuman', 'Penyelenggara\PengumumanController@PengumumanPage')->name('penyelenggara.pengumuman');
+    Route::get('penyelenggara/bantuan', 'Penyelenggara\BantuanController@BantuanPage')->name('penyelenggara.bantuan');
+    Route::get('penyelenggara/pengaturan', 'Penyelenggara\PengaturanController@PengaturanPage')->name('penyelenggara.pengaturan');
+});
+
+//Peserta
+Route::group(['middleware' => 'CekPesertaMiddleware'], function () {
+Route::get('peserta/logout', 'Auth\PesertaController@Logout')->name('peserta.logout');
+Route::get('peserta/dashboard', 'Peserta\DashboardController@DashboardPage')->name('peserta.dashboard');
+Route::get('peserta/cari-kompetisi', 'Peserta\CariKompetisiController@CariKompetisiPage')->name('peserta.carikompetisi');
+Route::get('peserta/detail-cari-kompetisi/{kompetisi}', 'Peserta\CariKompetisiController@DetailCariKompetisiPage')->name('peserta.detailcarikompetisi');
+Route::get('peserta/kompetisi-saya', 'Peserta\KompetisiSayaController@KompetisiSayaPage')->name('peserta.kompetisisaya');
+Route::get('peserta/pengumuman', 'Peserta\PengumumanController@PengumumanPage')->name('peserta.pengumuman');
+Route::get('peserta/bantuan', 'Peserta\BantuanController@BantuanPage')->name('peserta.bantuan');
+Route::get('peserta/pengaturan', 'Peserta\PengaturanController@PengaturanPage')->name('peserta.pengaturan');
+});
+
+//Home
+Route::get('home/pilih-daftar', function () {return view('home.pilih-daftar');})->name('home.pilih-daftar');
