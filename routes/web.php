@@ -44,6 +44,9 @@ Route::group(['middleware' => 'CekPenyelenggaraMiddleware'], function () {
     Route::get('penyelenggara/pengumuman', 'Penyelenggara\PengumumanController@PengumumanPage')->name('penyelenggara.pengumuman');
     Route::get('penyelenggara/bantuan', 'Penyelenggara\BantuanController@BantuanPage')->name('penyelenggara.bantuan');
     Route::get('penyelenggara/pengaturan', 'Penyelenggara\PengaturanController@PengaturanPage')->name('penyelenggara.pengaturan');
+    Route::get('/download_poster/{file}', 'Penyelenggara\AturKompetisiController@download_poster');
+    Route::get('/download_surat_pernyataan/{file}', 'Penyelenggara\AturKompetisiController@download_surat_pernyataan');
+    Route::get('/download_panduan/{file}', 'Penyelenggara\AturKompetisiController@download_panduan');
 });
 
 //Peserta
