@@ -136,6 +136,7 @@
                                                                         <div class="input-box">
                                                                             <label class="label-text">Thumbnail</label>
                                                                             <div class="form-group">
+                                                                                <input class="form-control-file border" hidden type="text" value="{{ $kompetisi->id }}" name="kompetisi_id" placeholder="">
                                                                                 <input class="form-control-file border" type="file" name="gambar_karya" placeholder="">
                                                                             </div>
                                                                         </div>

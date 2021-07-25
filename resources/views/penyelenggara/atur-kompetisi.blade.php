@@ -143,33 +143,34 @@
             </div>
         </div>
     </div>
+</div>
 
-    @endsection
-    @section('datatabel')
-    <script type="text/javascript">
-        var table;
-        $(document).ready(function () {
-            $(document).on('change', '.ord', function () {
-                console.log(this.value);
-                table.ajax.reload(null, false);
-            });
-            table = $('.yajra-datatable').DataTable({
-                processing: true,
-                serverSide: true,
-                sort: false,
-                "pageLength": 5,
-                "lengthChange": false,
-                "searching": false,
-                ajax: {
-                    url: "{{ route('penyelenggara.aturkompetisi') }}",
-                    data: function (d) {
-                        d.ordering_by = $('.ord').val();
-                    }
-                },
-                columns: [{
-                    data: 'id',
-                    render: function (meta, data, row) {
-                        var div = `<div class="col-lg-12 template">
+@endsection
+@section('datatabel')
+<script type="text/javascript">
+    var table;
+    $(document).ready(function () {
+        $(document).on('change', '.ord', function () {
+            console.log(this.value);
+            table.ajax.reload(null, false);
+        });
+        table = $('.yajra-datatable').DataTable({
+            processing: true,
+            serverSide: true,
+            sort: false,
+            "pageLength": 5,
+            "lengthChange": false,
+            "searching": false,
+            ajax: {
+                url: "{{ route('penyelenggara.aturkompetisi') }}",
+                data: function (d) {
+                    d.ordering_by = $('.ord').val();
+                }
+            },
+            columns: [{
+                data: 'id',
+                render: function (meta, data, row) {
+                    var div = `<div class="col-lg-12 template">
                         <div class="card-item card-item-list" style="margin-top:15px;">
                             <div class="card-img">
                                 <a href="hotel-single.html" class="d-block">
@@ -195,7 +196,7 @@
                                 </div>
                                 <div class="col-sm-6 text-right">
                                         <a type="button" class="btn-text detail-kompetiri">See details</a> | 
-                                        <a href="karya/per_kompetisi/` + row.id + `" class="btn-text">Lihat Karya</a>
+                                        <a href="daftar/karya/per_kompetisi/` + row.id + `" class="btn-text">Lihat Karya</a>
                                     
                                 </div>
                                     
@@ -203,33 +204,33 @@
                             </div>
                         </div>
                     </div>`;
-                        return div;
-                    }
-                }, ]
-            });
-            $(document).on('click', '.detail-kompetiri', function () {
-                $('.download-poster').empty();
-                $('.download-panduan').empty();
-                $('.download-surat').empty();
-                var data = table.row($(this).parents('tr')).data();
-                $('.judul-kompetisi').val(data.judul_kompetisi);
-                $('.deskripsi-kompetisi').val(data.deskirpsi_kompetisi);
-                $('.persyaratan-peserta').val(data.persyaratan_peserta);
-                $('.hadiah').val(data.hadiah);
-                $('.biaya-pendaftaran').val(data.biaya_pendaftaran);
-                $('.tanggal-mulai').val(data.tgl_mulai);
-                $('.tanggal-selesai').val(data.tgl_akhir);
-                $('.download-poster').append('<a class="btn btn-sm btn-info" href="/download_poster/' +
-                    data.poster + '"><i class="fa fa-download"> Download Poster</i></a>');
-                $('.download-panduan').append(
-                    '<a class="btn btn-sm btn-info" href="/download_panduan/' + data.panduan +
-                    '"><i class="fa fa-download"> Download Panduan</i></a>');
-                $('.download-surat').append(
-                    '<a class="btn btn-sm btn-info" href="/download_surat_pernyataan/' + data
-                    .surat_pernyataan +
-                    '"><i class="fa fa-download"> Download Surat Pernyataan</i></a>');
-                $('#modal-detail-kompetisi').modal('show');
-            })
+                    return div;
+                }
+            }, ]
         });
-    </script>
-    @endsection
+        $(document).on('click', '.detail-kompetiri', function () {
+            $('.download-poster').empty();
+            $('.download-panduan').empty();
+            $('.download-surat').empty();
+            var data = table.row($(this).parents('tr')).data();
+            $('.judul-kompetisi').val(data.judul_kompetisi);
+            $('.deskripsi-kompetisi').val(data.deskirpsi_kompetisi);
+            $('.persyaratan-peserta').val(data.persyaratan_peserta);
+            $('.hadiah').val(data.hadiah);
+            $('.biaya-pendaftaran').val(data.biaya_pendaftaran);
+            $('.tanggal-mulai').val(data.tgl_mulai);
+            $('.tanggal-selesai').val(data.tgl_akhir);
+            $('.download-poster').append('<a class="btn btn-sm btn-info" href="/download_poster/' +
+                data.poster + '"><i class="fa fa-download"> Download Poster</i></a>');
+            $('.download-panduan').append(
+                '<a class="btn btn-sm btn-info" href="/download_panduan/' + data.panduan +
+                '"><i class="fa fa-download"> Download Panduan</i></a>');
+            $('.download-surat').append(
+                '<a class="btn btn-sm btn-info" href="/download_surat_pernyataan/' + data
+                .surat_pernyataan +
+                '"><i class="fa fa-download"> Download Surat Pernyataan</i></a>');
+            $('#modal-detail-kompetisi').modal('show');
+        })
+    });
+</script>
+@endsection

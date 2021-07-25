@@ -47,6 +47,10 @@ Route::group(['middleware' => 'CekPenyelenggaraMiddleware'], function () {
     Route::get('/download_poster/{file}', 'Penyelenggara\AturKompetisiController@download_poster');
     Route::get('/download_surat_pernyataan/{file}', 'Penyelenggara\AturKompetisiController@download_surat_pernyataan');
     Route::get('/download_panduan/{file}', 'Penyelenggara\AturKompetisiController@download_panduan');
+    Route::get('penyelenggara/daftar/karya/per_kompetisi/{id}', 'Penyelenggara\ListKaryaController@show')->name('list_karya.show');
+    Route::get('penyelenggara/daftar/karya/per_kompetisi', 'Penyelenggara\ListKaryaController@dataDT')->name('list_karya.dataDT');
+    Route::get('read_all/notif/penyelenggara', 'Peserta\CariKompetisiController@read_all_penyelenggara')->name('read_notif.penyelenggara');
+    Route::post('penyelenggara/set_juara', 'Penyelenggara\ListKaryaController@set_juara')->name('set_juara');
 });
 
 //Peserta
@@ -60,6 +64,8 @@ Route::get('peserta/kompetisi-saya', 'Peserta\KompetisiSayaController@KompetisiS
 Route::get('peserta/pengumuman', 'Peserta\PengumumanController@PengumumanPage')->name('peserta.pengumuman');
 Route::get('peserta/bantuan', 'Peserta\BantuanController@BantuanPage')->name('peserta.bantuan');
 Route::get('peserta/pengaturan', 'Peserta\PengaturanController@PengaturanPage')->name('peserta.pengaturan');
+Route::get('read_all/notif', 'Peserta\CariKompetisiController@read_all')->name('read_notif');
+
 });
 
 //Home

@@ -15,6 +15,7 @@ return array(
     'App\\Http\\Controllers\\Penyelenggara\\BantuanController' => $baseDir . '/app/Http/Controllers/Penyelenggara/BantuanController.php',
     'App\\Http\\Controllers\\Penyelenggara\\BuatKompetisiController' => $baseDir . '/app/Http/Controllers/Penyelenggara/BuatKompetisiController.php',
     'App\\Http\\Controllers\\Penyelenggara\\DashboardController' => $baseDir . '/app/Http/Controllers/Penyelenggara/DashboardController.php',
+    'App\\Http\\Controllers\\Penyelenggara\\ListKaryaController' => $baseDir . '/app/Http/Controllers/Penyelenggara/ListKaryaController.php',
     'App\\Http\\Controllers\\Penyelenggara\\PengaturanController' => $baseDir . '/app/Http/Controllers/Penyelenggara/PengaturanController.php',
     'App\\Http\\Controllers\\Penyelenggara\\PengumumanController' => $baseDir . '/app/Http/Controllers/Penyelenggara/PengumumanController.php',
     'App\\Http\\Controllers\\Peserta\\BantuanController' => $baseDir . '/app/Http/Controllers/Peserta/BantuanController.php',

@@ -29,51 +29,28 @@
                                 <div class="dropdown">
                                     <a href="#" class="dropdown-toggle drop-reveal-toggle-icon" id="notificationDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="la la-bell"></i>
-                                        <span class="noti-count">4</span>
+                                        <span class="noti-count">{{ get_notif() }}</span>
                                     </a>
                                     <div class="dropdown-menu dropdown-reveal dropdown-menu-xl dropdown-menu-right">
                                         <div class="dropdown-header drop-reveal-header">
-                                            <h6 class="title">You have <strong class="text-black">4</strong> notifications</h6>
+                                            <h6 class="title">You have <strong class="text-black">{{ get_notif() }}</strong> notifications</h6>
                                         </div>
                                         <div class="list-group drop-reveal-list">
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <div class="msg-body d-flex align-items-center">
-                                                    <div class="icon-element flex-shrink-0 mr-3 ml-0"><i class="la la-bell"></i></div>
-                                                    <div class="msg-content w-100">
-                                                        <h3 class="title pb-1">Your request has been sent</h3>
-                                                        <p class="msg-text">2 min ago</p>
-                                                    </div>
-                                                </div><!-- end msg-body -->
-                                            </a>
+                                        <?php if(get_notif() != 0) :  ?>
+                                            @foreach(get_data_notif() as $d)
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="msg-body d-flex align-items-center">
                                                     <div class="icon-element bg-2 flex-shrink-0 mr-3 ml-0"><i class="la la-check"></i></div>
                                                     <div class="msg-content w-100">
-                                                        <h3 class="title pb-1">Your account has been created</h3>
-                                                        <p class="msg-text">1 day ago</p>
+                                                        <h3 class="title pb-1">Karya {{ $d->judul_karya }} Terkirim!!!</h3>
+                                                        <p class="msg-text">{{ get_selisih($d->created_at) }}</p>
                                                     </div>
                                                 </div><!-- end msg-body -->
                                             </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <div class="msg-body d-flex align-items-center">
-                                                    <div class="icon-element bg-3 flex-shrink-0 mr-3 ml-0"><i class="la la-user"></i></div>
-                                                    <div class="msg-content w-100">
-                                                        <h3 class="title pb-1">Your account updated</h3>
-                                                        <p class="msg-text">2 hrs ago</p>
-                                                    </div>
-                                                </div><!-- end msg-body -->
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <div class="msg-body d-flex align-items-center">
-                                                    <div class="icon-element bg-4 flex-shrink-0 mr-3 ml-0"><i class="la la-lock"></i></div>
-                                                    <div class="msg-content w-100">
-                                                        <h3 class="title pb-1">Your password changed</h3>
-                                                        <p class="msg-text">Yesterday</p>
-                                                    </div>
-                                                </div><!-- end msg-body -->
-                                            </a>
+                                            @endforeach
+                                        <?php endif ?>
                                         </div>
-                                        <a href="#" class="dropdown-item drop-reveal-btn text-center">View all</a>
+                                        <a href="{{ route('read_notif') }}" class="dropdown-item drop-reveal-btn text-center">View all</a>
                                     </div><!-- end dropdown-menu -->
                                 </div>
                             </div><!-- end notification-item -->

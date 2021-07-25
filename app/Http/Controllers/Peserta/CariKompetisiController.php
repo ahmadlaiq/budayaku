@@ -38,22 +38,39 @@ class CariKompetisiController extends Controller
         $berkas_pendaftaranPath   = "berkas_pendaftaran";
         $berkas_pendaftaran->move($berkas_pendaftaranPath, $berkas_pendaftaranName);
 
-        $this->saveKarya($request->all(), $berkas_pendaftaranName, $gambar_karya);
+        $this->saveKarya($request->all(), $berkas_pendaftaranName, $gambar_karyaName);
 
         //return dd(Auth::guard('penyelenggara'));
     	return redirect()->route('peserta.dashboard');
     }
     
-    protected function saveKarya(array $data, $berkas_pendaftaran = null, $gambar_karya = null)
+    protected function saveKarya(array $data, $berkas_pendaftaran = null, $gambar_karyaName = null)
     {
+        if(function_exists('date_default_timezone_set')) date_default_timezone_set('Asia/Jakarta');
+        $date = date_create(now());
         return Karya::create([
             'judul_karya'          => $data['judul_karya'],
             'link_youtube'         => $data['link_youtube'],
             'deskripsi'            => $data['deskripsi'],
-            'gambar_karya'         => $gambar_karya,
+            'gambar_karya'         => $gambar_karyaName,
             'berkas_pendaftaran'   => $berkas_pendaftaran,
             'peserta_id'           => Auth::guard('peserta')->user()->id,
-            'kompetisi_id'         
+            'kompetisi_id'         => $data['kompetisi_id'],
+            'created_at'            => $date
         ]);
+    }
+
+    public function read_all(){
+        DB::table('karya')->where('peserta_id', Auth::user()->id)->update([
+            'status' => '1'
+        ]);
+        return redirect()->back();
+    }
+    public function read_all_penyelenggara(){
+        $id = Auth::guard('penyelenggara')->user()->id;
+        DB::table('karya')->leftjoin('kompetisi','kompetisi.id', 'karya.kompetisi_id')->where('kompetisi.penyelenggara_id', $id)->where('karya.status','!=','2')->update([
+            'karya.status' => 2
+        ]);
+        return redirect()->back();
     }
 }

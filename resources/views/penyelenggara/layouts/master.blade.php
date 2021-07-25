@@ -237,10 +237,10 @@
     <script src={{ asset("js/animated-headline.js") }}></script>
     <script src={{ asset("js/jquery.sparkline.js") }}></script>
     <script src={{ asset("js/dashboard.js") }}></script>
-    <script src={{ asset("js/chart.js") }}></script>
-    <script src={{ asset("js/chart.extension.js") }}></script>
-    <script src={{ asset("js/bar-chart.js") }}></script>
-    <script src={{ asset("js/line-chart.js") }}></script>
+    <!-- <script src={{ asset("js/chart.js") }}></script> -->
+    <!-- <script src={{ asset("js/chart.extension.js") }}></script> -->
+    <!-- <script src={{ asset("js/bar-chart.js") }}></script> -->
+    <!-- <script src={{ asset("js/line-chart.js") }}></script> -->
     <script src={{ asset("js/jquery.ripples-min.js") }}></script>
     <script src={{ asset("js/main.js") }}></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
