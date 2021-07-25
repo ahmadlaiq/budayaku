@@ -691,7 +691,13 @@ class Route
             return $this->getDomain();
         }
 
-        $this->action['domain'] = $domain;
+        $parsed = RouteUri::parse($domain);
+
+        $this->action['domain'] = $parsed->uri;
+
+        $this->bindingFields = array_merge(
+            $this->bindingFields, $parsed->bindingFields
+        );
 
         return $this;
     }
@@ -901,6 +907,10 @@ class Route
     {
         $this->action = $action;
 
+        if (isset($this->action['domain'])) {
+            $this->domain($this->action['domain']);
+        }
+
         return $this;
     }
 
@@ -917,9 +927,9 @@ class Route
 
         $this->computedMiddleware = [];
 
-        return $this->computedMiddleware = array_unique(array_merge(
+        return $this->computedMiddleware = Router::uniqueMiddleware(array_merge(
             $this->middleware(), $this->controllerMiddleware()
-        ), SORT_REGULAR);
+        ));
     }
 
     /**

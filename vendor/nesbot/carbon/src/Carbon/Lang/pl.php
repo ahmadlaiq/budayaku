@@ -29,7 +29,7 @@
 return [
     'year' => ':count rok|:count lata|:count lat',
     'a_year' => 'rok|:count lata|:count lat',
-    'y' => ':count r|:count l',
+    'y' => ':count r|:count l|:count l',
     'month' => ':count miesiąc|:count miesiące|:count miesięcy',
     'a_month' => 'miesiąc|:count miesiące|:count miesięcy',
     'm' => ':count mies.',
@@ -53,8 +53,12 @@ return [
     'after' => ':time po',
     'before' => ':time przed',
     'diff_now' => 'przed chwilą',
+    'diff_today' => 'Dziś',
+    'diff_today_regexp' => 'Dziś(?:\\s+o)?',
     'diff_yesterday' => 'wczoraj',
+    'diff_yesterday_regexp' => 'Wczoraj(?:\\s+o)?',
     'diff_tomorrow' => 'jutro',
+    'diff_tomorrow_regexp' => 'Jutro(?:\\s+o)?',
     'diff_before_yesterday' => 'przedwczoraj',
     'diff_after_tomorrow' => 'pojutrze',
     'formats' => [

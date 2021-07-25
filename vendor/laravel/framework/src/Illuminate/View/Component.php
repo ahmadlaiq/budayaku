@@ -49,14 +49,14 @@ abstract class Component
     /**
      * Get the view / view contents that represent the component.
      *
-     * @return \Illuminate\View\View|string
+     * @return \Illuminate\View\View|\Closure|string
      */
     abstract public function render();
 
     /**
      * Resolve the Blade view or view file that should be used when rendering the component.
      *
-     * @return \Illuminate\View\View|string
+     * @return \Illuminate\View\View|\Closure|string
      */
     public function resolveView()
     {
@@ -66,11 +66,18 @@ abstract class Component
             return $view;
         }
 
-        $factory = Container::getInstance()->make('view');
+        $resolver = function ($view) {
+            $factory = Container::getInstance()->make('view');
 
-        return $factory->exists($view)
-                    ? $view
-                    : $this->createBladeViewFromString($factory, $view);
+            return $factory->exists($view)
+                        ? $view
+                        : $this->createBladeViewFromString($factory, $view);
+        };
+
+        return $view instanceof Closure ? function (array $data = []) use ($view, $resolver) {
+            return $resolver($view($data));
+        }
+        : $resolver($view);
     }
 
     /**
@@ -126,6 +133,9 @@ abstract class Component
             $reflection = new ReflectionClass($this);
 
             static::$propertyCache[$class] = collect($reflection->getProperties(ReflectionProperty::IS_PUBLIC))
+                ->reject(function (ReflectionProperty $property) {
+                    return $property->isStatic();
+                })
                 ->reject(function (ReflectionProperty $property) {
                     return $this->shouldIgnore($property->getName());
                 })

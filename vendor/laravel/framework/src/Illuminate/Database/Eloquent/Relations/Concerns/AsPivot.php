@@ -121,6 +121,8 @@ trait AsPivot
         $this->touchOwners();
 
         return tap($this->getDeleteQuery()->delete(), function () {
+            $this->exists = false;
+
             $this->fireModelEvent('deleted', false);
         });
     }
@@ -284,6 +286,8 @@ trait AsPivot
      */
     protected function newQueryForCollectionRestoration(array $ids)
     {
+        $ids = array_values($ids);
+
         if (! Str::contains($ids[0], ':')) {
             return parent::newQueryForRestoration($ids);
         }
