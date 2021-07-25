@@ -17,17 +17,17 @@ class BuatKompetisiController extends Controller
     { 		
         $panduan     = $request->file('panduan');
         $panduanName = time()."_".$panduan->getClientOriginalName();
-        $panduanPath   = "assets/panduan";
+        $panduanPath   = "panduan";
         $panduan->move($panduanPath, $panduanName);
 
         $poster     = $request->file('poster');
         $posterName = time()."_".$poster->getClientOriginalName();
-        $posterPath   = "assets/poster";
+        $posterPath   = "poster";
         $poster->move($posterPath, $posterName);
 
         $surat_pernyataan     = $request->file('surat_pernyataan');
         $surat_pernyataanName = time()."_".$surat_pernyataan->getClientOriginalName();
-        $surat_pernyataanPath   = "assets/surat_pernyataan";
+        $surat_pernyataanPath   = "surat_pernyataan";
         $surat_pernyataan->move($surat_pernyataanPath, $surat_pernyataanName);
 
         $this->saveKompetisi($request->all(), $panduanName, $surat_pernyataanName, $posterName);

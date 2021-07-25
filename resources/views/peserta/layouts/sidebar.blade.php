@@ -17,7 +17,7 @@
         <div class="sidebar-menu-wrap">
             <ul class="sidebar-menu toggle-menu list-items">
                 <li class="{{ Route::is('peserta.dashboard') ? 'page-active' : '' }}"><a href="{{ route('peserta.dashboard') }}"><i class="la la-dashboard mr-2"></i>Dashboard</a></li>
-                <li class="{{ Route::is('peserta.carikompetisi') ? 'page-active' : '' }}"><a href="{{ route('peserta.carikompetisi') }}"><i class="la la-pencil mr-2 text-color-10"></i>Cari Kompetisi</a></li>
+                <li class="{{ Route::is('peserta.carikompetisi', 'peserta.detailcarikompetisi') ? 'page-active' : '' }}"><a href="{{ route('peserta.carikompetisi') }}"><i class="la la-pencil mr-2 text-color-10"></i>Cari Kompetisi</a></li>
                 <li class="{{ Route::is('peserta.kompetisisaya') ? 'page-active' : '' }}"><a href="{{ route('peserta.kompetisisaya') }}"><i class="la la-list mr-2 text-color-4"></i>Kompetisi Saya</a></li>
                 <li class="{{ Route::is('peserta.pengumuman') ? 'page-active' : '' }}"><a href="{{ route('peserta.pengumuman') }}"><i class="la la-star mr-2 text-color-5"></i>Pengumuman</a></li>
                 <li class="{{ Route::is('peserta.bantuan') ? 'page-active' : '' }}"><a href="{{ route('peserta.bantuan') }}"><i class="la la-heart mr-2 text-color-6"></i>Bantuan</a></li>

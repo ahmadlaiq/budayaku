@@ -12,6 +12,6 @@ class Karya extends model
 
     protected $table = 'karya';
     protected $primaryKey   = "id";
-    protected $fillable = ['id','gambar_karya','judul_karya','link_youtube','deskirpsi','status','peserta_id','kompetisi_id'];
+    protected $fillable = ['id','gambar_karya','judul_karya','link_youtube','deskripsi','berkas_pendaftaran','status','peserta_id','kompetisi_id'];
 
 }

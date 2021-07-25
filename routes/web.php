@@ -52,6 +52,7 @@ Route::get('peserta/logout', 'Auth\PesertaController@Logout')->name('peserta.log
 Route::get('peserta/dashboard', 'Peserta\DashboardController@DashboardPage')->name('peserta.dashboard');
 Route::get('peserta/cari-kompetisi', 'Peserta\CariKompetisiController@CariKompetisiPage')->name('peserta.carikompetisi');
 Route::get('peserta/detail-cari-kompetisi/{kompetisi}', 'Peserta\CariKompetisiController@DetailCariKompetisiPage')->name('peserta.detailcarikompetisi');
+Route::post('peserta/kirim-karya', 'Peserta\CariKompetisiController@KirimKarya')->name('peserta.kirimkarya');
 Route::get('peserta/kompetisi-saya', 'Peserta\KompetisiSayaController@KompetisiSayaPage')->name('peserta.kompetisisaya');
 Route::get('peserta/pengumuman', 'Peserta\PengumumanController@PengumumanPage')->name('peserta.pengumuman');
 Route::get('peserta/bantuan', 'Peserta\BantuanController@BantuanPage')->name('peserta.bantuan');

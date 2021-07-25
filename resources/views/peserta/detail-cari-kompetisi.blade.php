@@ -32,7 +32,7 @@
                             <div class="breadcrumb-btn">
                                 <div class="btn-box">
                                     <a class="theme-btn" data-src="images/car-img.jpg" data-fancybox="gallery" data-caption="Showing image - 01" data-speed="700">
-                                        <i class="la la-photo mr-2"></i>Unduh Panduan Peserta
+                                        <i class="la la-download mr-2"></i>Unduh Panduan Peserta
                                     </a>
                                 </div>
                                 <a class="d-none" data-fancybox="gallery" data-src="images/car-img2.jpg" data-caption="Showing image - 02" data-speed="700"></a>
@@ -129,15 +129,17 @@
                                                 <div class="form-box">
                                                     <div class="form-content">
                                                         <div class="contact-form-action">
-                                                            <form method="post" action="">
+                                                            <form action="{{ route('peserta.kirimkarya') }}" class="MultiFile-intercepted" method="POST"  enctype="multipart/form-data">
+                                                                @csrf
                                                                 <div class="row">
-                                                                    <div class="col-lg-12">
-                                                                        <div class="file-upload-wrap">
+                                                                    <div class="col-lg-12 responsive-column">
+                                                                        <div class="input-box">
                                                                             <label class="label-text">Thumbnail</label>
-                                                                            <div class="MultiFile-wrap" id="MultiFile1"><input type="file" name="gambar_karya" class="multi file-upload-input with-preview MultiFile-applied" multiple="" maxlength="3" id="MultiFile1" value=""><div class="MultiFile-list" id="MultiFile1_list"></div></div>
-                                                                            <span class="file-upload-text"><i class="la la-upload mr-2"></i>Click or drag images here to upload</span>
+                                                                            <div class="form-group">
+                                                                                <input class="form-control-file border" type="file" name="gambar_karya" placeholder="">
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
+                                                                    </div><!-- end col-lg-12 -->
                                                                     <div class="col-lg-12 responsive-column">
                                                                         <div class="input-box">
                                                                             <label class="label-text">Judul Karya</label>
@@ -148,7 +150,7 @@
                                                                     </div>
                                                                     <div class="col-lg-12 responsive-column">
                                                                         <div class="input-box">
-                                                                            <label class="label-text">Link Youtube Karya</label>
+                                                                            <label class="label-text">Link Karya (Youtube, Imgur, etc.)</label>
                                                                             <div class="form-group">
                                                                                 <input class="form-control" name="link_youtube" type="text" placeholder="">
                                                                             </div>
@@ -158,7 +160,15 @@
                                                                         <div class="input-box">
                                                                             <label class="label-text">Deskirpsi Karya</label>
                                                                             <div class="form-group">
-                                                                                <textarea class="form-control" name="deskirpsi" type="text" rows="5"></textarea>
+                                                                                <textarea class="form-control" name="deskripsi" type="text" rows="5"></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div><!-- end col-lg-12 -->
+                                                                    <div class="col-lg-12 responsive-column">
+                                                                        <div class="input-box">
+                                                                            <label class="label-text">Berkas Pendaftaran</label>
+                                                                            <div class="form-group">
+                                                                                <input class="form-control-file border" type="file" name="berkas_pendaftaran" placeholder="">
                                                                             </div>
                                                                         </div>
                                                                     </div><!-- end col-lg-12 -->

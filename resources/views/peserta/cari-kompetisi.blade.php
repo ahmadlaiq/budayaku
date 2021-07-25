@@ -53,7 +53,7 @@
                 @foreach ($kompetisi as $no => $data)
                 <div class="card-item card-item-list">
                     <div class="card-img">
-                        <a href="hotel-single.html" class="d-block">
+                        <a href="{{ route('peserta.detailcarikompetisi', $data->id) }}" class="d-block">
                             <img width="600" height="400" src={{ url('/poster/'.$data->poster) }} alt="hotel-img" >
                         </a>
                         <span class="badge">Sedang Berlangsung</span>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title"><a href="hotel-single.html">{{ $data->judul_kompetisi }}</a></h3>
+                        <h3 class="card-title"><a href="{{ route('peserta.detailcarikompetisi', $data->id) }}">{{ $data->judul_kompetisi }}</a></h3>
                         <p class="card-meta">150 Pengirim</p>
                         <div class="card-rating">
                             <span class="">Deadline kompetisi:</span>
