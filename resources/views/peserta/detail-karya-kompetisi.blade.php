@@ -33,24 +33,13 @@
                         </div>
                         <div class="form-content">
                             <div class="row">
-                                <div class="col-sm-6 text-center">
+                                <div class="col-sm-12 text-center">
                                     <div class="card">
                                         <div class="card-header">
                                             Embeded
                                         </div>
                                         <div class="card-body">
                                             {!! str_replace('width="560"','width="75%"',$data->link_youtube) !!}<br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 text-center">
-                                    <div class="card" style="height: 100%;">
-                                        <div class="card-header">
-                                            Gambar Karya
-                                        </div>
-                                        <div class="card-body">
-                                            <img src="{{ asset("gambar_karya/".$data->gambar_karya) }}"
-                                                alt="hotel-img"><br>
                                         </div>
                                     </div>
                                 </div>
