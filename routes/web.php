@@ -51,6 +51,8 @@ Route::group(['middleware' => 'CekPenyelenggaraMiddleware'], function () {
     Route::get('penyelenggara/daftar/karya/per_kompetisi', 'Penyelenggara\ListKaryaController@dataDT')->name('list_karya.dataDT');
     Route::get('read_all/notif/penyelenggara', 'Peserta\CariKompetisiController@read_all_penyelenggara')->name('read_notif.penyelenggara');
     Route::post('penyelenggara/set_juara', 'Penyelenggara\ListKaryaController@set_juara')->name('set_juara');
+    Route::get('penyelenggara/daftar/karya/per_kompetisi/download/gambar_karya/{file}', 'Penyelenggara\AturKompetisiController@download_gambar');
+    Route::get('penyelenggara/daftar/karya/per_kompetisi/download/berkas_daftar/{file}', 'Penyelenggara\AturKompetisiController@download_berkas_daftar');
 });
 
 //Peserta

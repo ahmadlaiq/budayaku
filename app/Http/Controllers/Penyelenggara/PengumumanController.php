@@ -12,7 +12,7 @@ class PengumumanController extends Controller
     {
         if($request->ajax()){
             $id_p = session_penyelenggara()->id;
-            $sql = "SELECT max(tb.judul_kompetisi) as judul_kompetisi ,CONCAT( '[', GROUP_CONCAT( json_object( 'judul_karya', ta.judul_karya, 'nama_lengkap', tc.nama_lengkap, 'status_juara', ta.status_juara )), ']' ) AS data_juara  FROM karya ta LEFT JOIN kompetisi tb ON ta.kompetisi_id = tb.id LEFT JOIN peserta tc ON ta.peserta_id = tc.id WHERE ta.status_juara IS NOT NULL AND tb.penyelenggara_id = '$id_p' GROUP BY tb.id ";
+            $sql = "SELECT max(ta.kompetisi_id) as id_kompetisi,  max(tb.judul_kompetisi) as judul_kompetisi ,CONCAT( '[', GROUP_CONCAT( json_object( 'judul_karya', ta.judul_karya, 'nama_lengkap', tc.nama_lengkap, 'status_juara', ta.status_juara )), ']' ) AS data_juara  FROM karya ta LEFT JOIN kompetisi tb ON ta.kompetisi_id = tb.id LEFT JOIN peserta tc ON ta.peserta_id = tc.id WHERE ta.status_juara IS NOT NULL AND tb.penyelenggara_id = '$id_p' GROUP BY tb.id ";
             $data = DB::select($sql);
              return Datatables::of($data)
              ->addColumn('detail_juara', function($row){
@@ -20,7 +20,7 @@ class PengumumanController extends Controller
              })
              ->addColumn('action', function($row){
                  $btn = '';
-                 $btn = ' <a href="" class="btn btn-info btn-sm">Detail</a>';
+                 $btn = '  <a href="daftar/karya/per_kompetisi/'. $row->id_kompetisi.'" class="btn-sm btn btn-info">Lihat Daftar Karya</a>';
                  return  $btn;
              })
              ->rawColumns(['action','detail_juara'])

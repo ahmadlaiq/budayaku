@@ -11,8 +11,9 @@ class AturKompetisiController extends Controller
 {
     public function AturKompetisiPage(Request $request){
         if($request->ajax()){
+            $id_p = session_penyelenggara()->id;
             $order_by = $request->ordering_by;
-            $sql = "select * from kompetisi";
+            $sql = "select * from kompetisi where penyelenggara_id = '$id_p'";
             if($order_by == '1'){
                 $sql .= '';
             }elseif($order_by == '2'){
@@ -65,6 +66,14 @@ class AturKompetisiController extends Controller
     }
     public function panduan($file_name) {
         $file_path = public_path('panduan/'.$file_name);
+        return response()->download($file_path);
+    }
+    public function download_gambar($file_name) {
+        $file_path = public_path('gambar_karya/'.$file_name);
+        return response()->download($file_path);
+    }
+    public function download_berkas_daftar($file_name) {
+        $file_path = public_path('berkas_pendaftaran/'.$file_name);
         return response()->download($file_path);
     }
 }

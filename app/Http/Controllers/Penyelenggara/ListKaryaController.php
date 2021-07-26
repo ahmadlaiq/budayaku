@@ -58,10 +58,15 @@ class ListKaryaController extends Controller
         return Datatables::of($data)
         ->addColumn('action', function($row){
             $btn = '';
-            $btn = ' <a href="" class="btn btn-info btn-sm">Detail</a>';
+            $btn = ' <a type="button" style="color:white;" class="btn btn-info btn-sm detail-karya-modal">Detail</a>';
             return  $btn;
         })
-        ->rawColumns(['action'])
+        ->addColumn('embeded', function($row){
+            $btn = '';
+            $btn = str_replace('width="560"','width="100%"',$row->link_youtube);
+            return  $btn;
+        })
+        ->rawColumns(['action','embeded'])
         ->addIndexColumn()
         ->make(true);
     }
@@ -102,7 +107,7 @@ class ListKaryaController extends Controller
 
     public function set_juara(Request $request)
     {
-        $data_cek = DB::table('karya')->where('kompetisi_id', $request->kompetisi_id)->where('status_juara',$request->peringkat)->count();
+        $data_cek = DB::table('karya')->where('kompetisi_id', $request->kompetisi_id)->where('status_juara',$request->peringkat)->where('status_juara','!=',null)->count();
         if($data_cek > 0 ){
             return json_encode(array('statusCode'=>301));
         }else{

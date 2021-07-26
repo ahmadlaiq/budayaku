@@ -83,6 +83,42 @@
         </div><!-- end container-fluid -->
     </div><!-- end dashboard-main-content -->
 </div>
+<div class="modal fade bd-example-modal-lg" id="detail-karya-modal" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5><b>Detail Karya</b></h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Judul Karya</label>
+                    <input disabled type="email" class="form-control judul_karya" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Embeded</label><BR>
+                    <div id="test" class="text-center"></div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Deskripsi Karya</label>
+                    <textarea class="form-control deskripsi" readonly rows="3"></textarea>
+                </div>
+                <div class="row text-center">
+                    <div class="col download-gambar">
+
+                    </div>
+                    <div class="col download-berkas-daftar">
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <input type="hidden" value="{{ $kompetisi->id }}" class="id_komp" />
 @endsection
 @section('datatabel')
@@ -115,9 +151,13 @@
                     data: 'judul_karya',
                     className: 'text-center',
                     render: function (meta, data, row) {
-                        var option = row.status_juara == null ? '<option value="">Pilih Peringkat</option>' : '<option value="'+ row.status_juara +'">Juara '+row.status_juara+'</option>';
-                        option +=  '<option value="1">Juara 1</option> <option value="2">Juara 2</option> <option value="3">Juara 3</option> </select>';
-                        var select = '<select class="form-control select_peringkat">'+option+'</option>';
+                        var option = row.status_juara == null ?
+                            '<option value="">Pilih Peringkat</option>' : '<option value="' +
+                            row.status_juara + '">Juara ' + row.status_juara + '</option>';
+                        option +=
+                            '<option value="">Tidak Juara</option><option value="1">Juara 1</option> <option value="2">Juara 2</option> <option value="3">Juara 3</option> </select>';
+                        var select = '<select class="form-control select_peringkat">' + option +
+                            '</option>';
                         return select
                     }
                 },
@@ -131,7 +171,7 @@
             var data = table.row($(this).parents('tr')).data();
             $.ajax({
                 url: "{{ route('set_juara') }}",
-                method:"POST",
+                method: "POST",
                 data: {
                     _token: '{{ csrf_token() }}',
                     id_karya: data.id_karya,
@@ -150,6 +190,28 @@
 
                 }
             });
+        })
+        $(document).on('click', '.detail-karya-modal', function () {
+            var data = table.row($(this).parents('tr')).data();
+            $("#test").empty();
+            $('.download-gambar').empty();
+            $('.download-berkas-daftar').empty();
+            $('.judul_karya').val(data.judul_karya);
+            $('.deskripsi').val(data.deskripsi);
+            var obj = {
+                "video": {
+                    "value": data.embeded
+                }
+            };
+            $("#test").html(obj.video.value);
+            $('#detail-karya-modal').modal('show');
+            $('.download-gambar').append(
+                '<a class="btn btn-sm btn-info" href="download/gambar_karya/'+data.gambar_karya+'"><i class="fa fa-download"></i> Download Gambar Karya</a>'
+                );
+            $('.download-berkas-daftar').append(
+                '<a class="btn btn-sm btn-info" href="download/berkas_daftar/'+data.berkas_pendaftaran+'"><i class="fa fa-download"></i> Download Berkas Pendaftara</a>'
+                );
+
         })
     });
 </script>
