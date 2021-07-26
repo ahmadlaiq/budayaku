@@ -67,6 +67,8 @@ Route::get('peserta/pengumuman', 'Peserta\PengumumanController@PengumumanPage')-
 Route::get('peserta/bantuan', 'Peserta\BantuanController@BantuanPage')->name('peserta.bantuan');
 Route::get('peserta/pengaturan', 'Peserta\PengaturanController@PengaturanPage')->name('peserta.pengaturan');
 Route::get('read_all/notif', 'Peserta\CariKompetisiController@read_all')->name('read_notif');
+Route::get('peserta/aturkompetisi', 'Peserta\CariKompetisiController@CariKompetisiPage')->name('peserta.aturkompetisi');
+Route::get('peserta/detail/karya/{id}', 'Peserta\CariKompetisiController@detail_karya')->name('peserta.detail.karya');
 
 });
 

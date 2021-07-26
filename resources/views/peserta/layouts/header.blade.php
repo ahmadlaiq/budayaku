@@ -50,7 +50,7 @@
                                             @endforeach
                                         <?php endif ?>
                                         </div>
-                                        <a href="{{ route('read_notif') }}" class="dropdown-item drop-reveal-btn text-center">View all</a>
+                                        <a href="{{ route('read_notif') }}" class="dropdown-item drop-reveal-btn text-center">Tandai Sudah Terbaca Semua</a>
                                     </div><!-- end dropdown-menu -->
                                 </div>
                             </div><!-- end notification-item -->

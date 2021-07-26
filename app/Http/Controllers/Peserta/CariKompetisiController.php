@@ -8,19 +8,69 @@ use Illuminate\Support\Facades\DB;
 use App\Kompetisi;
 use App\Karya;
 use Illuminate\Support\Facades\Auth;
+use DataTables;
 
 class CariKompetisiController extends Controller
 {
-    public function CariKompetisiPage(){
+    public function CariKompetisiPage(Request $request){
         //$kompetisi = DB::table('kompetisi');
         //return view('peserta.cari-kompetisi', ['kompetisi'=> $kompetisi]);
-        
+        if($request->ajax()){
+            $order_by = $request->ordering_by;
+            $sql = "";
+
+            if(isset($request->id_auth)){
+                $sql = " select kompetisi.*, karya.id as karya_id from kompetisi left join karya ON kompetisi.id = karya.kompetisi_id Where karya.peserta_id = '$request->id_auth'";
+            }else{
+                $sql = "select * from kompetisi ";
+            }
+
+            if($order_by == '1'){
+                $sql .= '';
+            }elseif($order_by == '2'){
+                $sql .= " ORDER BY biaya_pendaftaran ASC";
+            }elseif($order_by == '3'){
+                $sql .= " ORDER BY biaya_pendaftaran DESC";
+            }elseif($order_by == '4'){
+                $sql .= " ORDER BY judul_kompetisi ASC";
+            }else{
+                $sql .= " ORDER BY created_at ASC";
+            }
+            $data = DB::select($sql);
+            return Datatables::of($data)
+            ->addColumn('status_kompetisi', function($row){
+                if(function_exists('date_default_timezone_set')) date_default_timezone_set('Asia/Jakarta');
+                $date = now();
+                $status = '';
+                if( $row->tgl_akhir < $date){
+                    $status = ' <span style="background:red" class="badge badge-danger">Berakhir</span>';
+                }else{
+                    $status = ' <span class="badge ">Sedang Berlangsung</span>';
+                }
+                return $status;
+            })
+            ->addColumn('tgl_akhir', function($row){
+                return date('d F Y', strtotime($row->tgl_akhir));
+            })
+            ->addColumn('tgl_mulai', function($row){
+                return date('d F Y', strtotime($row->tgl_mulai));
+            })
+            ->addColumn('hadiah', function($row){
+                return number_format($row->hadiah,2);
+            })
+            ->addColumn('biaya_pendaftaran', function($row){
+                return number_format($row->biaya_pendaftaran,2);
+            })
+            ->rawColumns(['tgl_akhir','hadiah','tgl_mulai','biaya_pendaftaran','status_kompetisi'])
+            ->addIndexColumn()
+            ->make(true);
+        }
         $kompetisi = Kompetisi::paginate(10);
         return view('peserta.cari-kompetisi', compact('kompetisi'));
     }
 
     public function DetailCariKompetisiPage(Kompetisi $kompetisi){
-        
+        // dd($kompetisi);
         return view('peserta.detail-cari-kompetisi', [
             'kompetisi' => $kompetisi
         ]);
@@ -72,5 +122,9 @@ class CariKompetisiController extends Controller
             'karya.status' => 2
         ]);
         return redirect()->back();
+    }
+    function detail_karya($id){
+        $data = DB::table('karya')->where('id', $id)->first();
+        return view('peserta.detail-karya-kompetisi', compact('data'));
     }
 }
