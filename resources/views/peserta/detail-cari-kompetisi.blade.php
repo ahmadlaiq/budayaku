@@ -137,7 +137,8 @@
                                                                             <label class="label-text">Thumbnail</label>
                                                                             <div class="form-group">
                                                                                 <input class="form-control-file border" hidden type="text" value="{{ $kompetisi->id }}" name="kompetisi_id" placeholder="">
-                                                                                <input class="form-control-file border" type="file" name="gambar_karya" placeholder="">
+                                                                                <input id="input-id" type="file" class="file input-id"  name="gambar_karya" data-preview-file-type="text">
+
                                                                             </div>
                                                                         </div>
                                                                     </div><!-- end col-lg-12 -->
@@ -169,7 +170,15 @@
                                                                         <div class="input-box">
                                                                             <label class="label-text">Berkas Pendaftaran</label>
                                                                             <div class="form-group">
-                                                                                <input class="form-control-file border" type="file" name="berkas_pendaftaran" placeholder="">
+                                                                            <input id="input-id" type="file" class="file input-id"  name="berkas_pendaftaran" data-preview-file-type="text">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div><!-- end col-lg-12 -->
+                                                                    <div class="col-lg-12 responsive-column">
+                                                                        <div class="input-box">
+                                                                            <label class="label-text">Bukti Pembayaran</label>
+                                                                            <div class="form-group">
+                                                                            <input id="input-id" type="file" class="file input-id"  name="bukti_pembayaran" data-preview-file-type="text">
                                                                             </div>
                                                                         </div>
                                                                     </div><!-- end col-lg-12 -->
@@ -217,6 +226,11 @@
         </div><!-- end container-fluid -->
     </div><!-- end dashboard-main-content -->
 </div>
+@endsection
+@section('datatabel')
+<script>
+$(".input-id").fileinput({'showUpload':false, 'previewFileType':'any'});
+</script>
 @endsection
 
 

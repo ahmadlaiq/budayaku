@@ -7,7 +7,7 @@
                 <div class="col-lg-6">
                     <div class="breadcrumb-content">
                         <div class="section-heading">
-                            <h2 class="sec__title font-size-30 text-white">Buat Kompetisi</h2>
+                            <h2 class="sec__title font-size-30 text-white">Daftar</h2>
                         </div>
                     </div><!-- end breadcrumb-content -->
                 </div><!-- end col-lg-6 -->

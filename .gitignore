@@ -6,3 +6,4 @@ public/berkas_pendaftaran/.DS_Store
 public/gambar_karya/.DS_Store
 public/.DS_Store
 .DS_Store
+app/Http/Controllers/Peserta/CariKompetisiController.php

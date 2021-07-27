@@ -87,14 +87,24 @@ class CariKompetisiController extends Controller
         $berkas_pendaftaranName = time()."_".$berkas_pendaftaran->getClientOriginalName();
         $berkas_pendaftaranPath   = "berkas_pendaftaran";
         $berkas_pendaftaran->move($berkas_pendaftaranPath, $berkas_pendaftaranName);
+        
+        //generate name file pembayaran
+        $profile = DB::table('peserta')->where('id', Auth::guard('peserta')->user()->id)->first();
+        $arr = "bukti_pembayaran_".str_replace(" ","_",$profile->nama_lengkap)."_".rand(10,100).date('Ymd');
+        $ext = $request->bukti_pembayaran->extension(); 
+        //end generate
+        $bukti_bayar    = $request->file('bukti_pembayaran');
+        $file_name_bayar = $arr.".".$ext;
+        $folder_bukti_bayar   = "bukti_pembayaran";
+        $bukti_bayar->move($folder_bukti_bayar, $file_name_bayar);
 
-        $this->saveKarya($request->all(), $berkas_pendaftaranName, $gambar_karyaName);
+        $this->saveKarya($request->all(), $berkas_pendaftaranName, $gambar_karyaName, $file_name_bayar);
 
         //return dd(Auth::guard('penyelenggara'));
     	return redirect()->route('peserta.dashboard');
     }
     
-    protected function saveKarya(array $data, $berkas_pendaftaran = null, $gambar_karyaName = null)
+    protected function saveKarya(array $data, $berkas_pendaftaran = null, $gambar_karyaName = null, $file_name_bayar)
     {
         if(function_exists('date_default_timezone_set')) date_default_timezone_set('Asia/Jakarta');
         $date = date_create(now());
@@ -106,7 +116,8 @@ class CariKompetisiController extends Controller
             'berkas_pendaftaran'   => $berkas_pendaftaran,
             'peserta_id'           => Auth::guard('peserta')->user()->id,
             'kompetisi_id'         => $data['kompetisi_id'],
-            'created_at'            => $date
+            'created_at'           => $date,
+            'bukti_pembayaran'     => $file_name_bayar
         ]);
     }
 
