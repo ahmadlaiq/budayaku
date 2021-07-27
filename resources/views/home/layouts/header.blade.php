@@ -18,15 +18,15 @@
                         <div class="main-menu-content">
                             <nav>
                                 <ul>
-                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/">Beranda</a></li>
                                     <li><a href="#">Pameran</a></li>
-									<li><a href="#">About</a></li>
-                                    <li><a href="#">Contact Us</a></li>    
+                                    <li><a href="#">Kompetisi</a></li>
+									<li><a href="#">Tentang Kami</a></li>  
                                 </ul>
                             </nav>
                         </div><!-- end main-menu-content -->
                         <div class="nav-btn">
-                            <a href="{{ route('home.pilih-daftar') }}" class="theme-btn">Sign Up</a>
+                            <a href="{{ route('peserta.login') }}" class="theme-btn">Masuk</a>
                         </div><!-- end nav-btn -->
                     </div><!-- end menu-wrapper -->
                 </div><!-- end col-lg-12 -->

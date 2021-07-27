@@ -202,7 +202,7 @@
                                     </p>
                                 </div>
                                 <div class="col-sm-6 text-right">
-                                        <a type="button" class="btn-text detail-kompetiri">See details</a> | 
+                                        <a type="button" class="btn-text detail-kompetiri">Lihat Detail</a> | 
                                         <a href="daftar/karya/per_kompetisi/` + row.id + `" class="btn-text">Lihat Karya</a>
                                     
                                 </div>

@@ -145,13 +145,13 @@
                     var div = `<div class="col-lg-12 template">
                         <div class="card-item card-item-list" style="margin-top:15px;">
                             <div class="card-img">
-                                <a href="hotel-single.html" class="d-block">
+                                <a href="detail/karya/` + row.karya_id + `" class="d-block">
                                     <img src={{ asset("poster/` + row.poster + `") }} alt="hotel-img">
                                 </a>
 
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title"><a href="hotel-single.html">` + row.judul_kompetisi + `</a>
+                                <h3 class="card-title"><a href="detail/karya/` + row.karya_id + `">` + row.judul_kompetisi + `</a>
                                 </h3>
                                 <div class="card-rating">
                                     <span class="">Deadline kompetisi:</span>
