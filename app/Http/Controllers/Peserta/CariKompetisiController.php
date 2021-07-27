@@ -92,7 +92,7 @@ class CariKompetisiController extends Controller
         $profile = DB::table('peserta')->where('id', Auth::guard('peserta')->user()->id)->first();
         $arr = "bukti_pembayaran_".str_replace(" ","_",$profile->nama_lengkap)."_".rand(10,100).date('Ymd');
         $ext = $request->bukti_pembayaran->extension(); 
-        //end generate
+        //end generate kode
         $bukti_bayar    = $request->file('bukti_pembayaran');
         $file_name_bayar = $arr.".".$ext;
         $folder_bukti_bayar   = "bukti_pembayaran";
