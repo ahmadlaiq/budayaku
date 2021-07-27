@@ -120,11 +120,22 @@ class CariKompetisiController extends Controller
         $id = Auth::guard('penyelenggara')->user()->id;
         DB::table('karya')->leftjoin('kompetisi','kompetisi.id', 'karya.kompetisi_id')->where('kompetisi.penyelenggara_id', $id)->where('karya.status','!=','2')->update([
             'karya.status' => 2
-        ]);
-        return redirect()->back();
+            ]);
+            return redirect()->back();
+        }
+        function detail_karya($id){
+            $data = DB::table('karya')->where('id', $id)->first();
+            return view('peserta.detail-karya-kompetisi', compact('data'));
+        }
+        function pemenang_kompetisi($id){
+            $id_peserta = Auth::guard('peserta')->user()->id;
+            $get_juara_pertama = DB::table('karya')->leftjoin('peserta','peserta.id','karya.peserta_id')->where('status_juara', '1')->where('kompetisi_id', $id)->first();
+            $get_juara_dua = DB::table('karya')->leftjoin('peserta','peserta.id','karya.peserta_id')->where('status_juara', '2')->where('kompetisi_id', $id)->first();
+            $get_juara_tiga = DB::table('karya')->leftjoin('peserta','peserta.id','karya.peserta_id')->where('status_juara', '3')->where('kompetisi_id', $id)->first();
+            $cek_juara = DB::table('karya')->leftjoin('peserta','peserta.id','karya.peserta_id')->where('status_juara', '!=', null)->where('kompetisi_id', $id)->where('peserta_id', $id_peserta)->count();
+            $kompetisi = DB::table('kompetisi')->where('id', $id)->first();
+            $karya = DB::table('karya')->leftjoin('peserta','peserta.id','karya.peserta_id')->where('kompetisi_id', $id)->get();
+            return view('peserta.pemenang-kompetisi', compact('get_juara_pertama','get_juara_dua','get_juara_tiga','kompetisi','karya','cek_juara'));
     }
-    function detail_karya($id){
-        $data = DB::table('karya')->where('id', $id)->first();
-        return view('peserta.detail-karya-kompetisi', compact('data'));
-    }
+
 }
