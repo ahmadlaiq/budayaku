@@ -35,21 +35,24 @@
                 <div class="filter-wrap margin-bottom-30px">
                     <div class="filter-top d-flex align-items-center justify-content-between pb-4">
                         <div>
-                            <h3 class="title font-size-24">2292 Tours found</h3>
-                            <p class="font-size-14 line-height-20 pt-1">Book with confidence: No tour booking fees</p>
+                            <h3 class="title font-size-24">{{ $total_karya }} Karya Ditemukan</h3>
+                            <!-- <p class="font-size-14 line-height-20 pt-1">Book with confidence: No tour booking fees</p> -->
                         </div>
                     </div><!-- end filter-top -->
                     <div class="filter-bar d-flex align-items-center justify-content-between">
                         <div class="filter-bar-filter d-flex flex-wrap align-items-center">
                             <div class="filter-option">
-                                <h3 class="title font-size-16">List Karya</h3>
+                                <h3 class="title font-size-16">Filter By</h3>
                             </div>
-                        </div><!-- end filter-bar-filter -->
-                            <select class="form-select filter" tabindex="-98">
-                                    <option >Order By</option>
+                            <div class="filter-option">
+
+                                <select class="form-select form-control filter" tabindex="-98">
+                                    <option value="">Default</option>
                                     <option value="1">Karya Terbaru</option>
                                     <option value="2">Karya Lama</option>
                                 </select>
+                            </div>
+                        </div><!-- end filter-bar-filter -->
                         <div class="select-contain">
                             <div class="dropdown bootstrap-select select-contain-select">
                             </div>
@@ -65,12 +68,13 @@
 </section>
 @include('home.layouts.footer')
 <script>
+    var p;
     var d = $('.filter').val();
     $(window).on('hashchange', function () {
         if (window.location.hash) {
             var page = window.location.hash.replace('#', '');
             if (page == Number.NaN || page <= 0) {
-            console.log(page);
+                console.log(page);
                 return false;
             } else {
                 getData(page);
@@ -86,20 +90,26 @@
             event.preventDefault();
             var myurl = $(this).attr('href');
             var page = $(this).attr('href').split('page=')[1];
-
+            p = page;
 
             getData(page);
         });
     });
 
-    $(document).on('change', '.filter', function(){
+    $(document).on('change', '.filter', function () {
         d = this.value;
-        getData()
+        getData(p)
     })
+
     function getData(page) {
-        console.log(d);
+        var one_page;
+        if (page === undefined) {
+            one_page = 1;
+        } else {
+            one_page = page;
+        }
         $.ajax({
-                url: '?page=' + page +'&order='+d,
+                url: '?page=' + one_page + '&order=' + d,
                 type: "get",
                 datatype: "html",
             })

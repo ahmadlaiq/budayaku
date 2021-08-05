@@ -13,23 +13,46 @@ class PameranController extends Controller
      */
     public function index(Request $request)
     {
+        $data = DB::table('karya AS ta')
+        ->leftjoin('kompetisi AS tb','tb.id', 'ta.kompetisi_id')
+        ->leftjoin('peserta AS tc','ta.peserta_id','tc.id')
+        ->select('ta.id As id_karya','ta.link_youtube','ta.deskripsi','ta.created_at', 'ta.gambar_karya', 'ta.judul_karya', 'tb.judul_kompetisi', 'tc.nama_lengkap')
+        ->paginate(20);
 
-        $sql = "select ta.created_at, ta.gambar_karya, ta.judul_karya, tb.judul_kompetisi, tc.nama_lengkap from karya ta LEFT JOIN kompetisi tb On ta.kompetisi_id = tb.id LEFT JOIN peserta tc On ta.peserta_id = tc.id ";
-        // dd($request->order);
         if(isset($request->order)){
-            if($request->order == 2){
-                $sql .= " ORDER BY ta.created_at DESC";
+            if($request->order == '1'){
+                $data = DB::table('karya AS ta')
+                ->leftjoin('kompetisi AS tb','tb.id', 'ta.kompetisi_id')
+                ->leftjoin('peserta AS tc','ta.peserta_id','tc.id')
+                ->select('ta.id As id_karya','ta.link_youtube','ta.deskripsi','ta.created_at', 'ta.gambar_karya', 'ta.judul_karya', 'tb.judul_kompetisi', 'tc.nama_lengkap')
+                ->orderBy('ta.created_at', 'DESC')
+                ->paginate(20);
+            }elseif($request->order == '1'){
+                $data = DB::table('karya AS ta')
+                ->leftjoin('kompetisi AS tb','tb.id', 'ta.kompetisi_id')
+                ->leftjoin('peserta AS tc','ta.peserta_id','tc.id')
+                ->select('ta.id As id_karya','ta.link_youtube','ta.deskripsi','ta.created_at', 'ta.gambar_karya', 'ta.judul_karya', 'tb.judul_kompetisi', 'tc.nama_lengkap')
+                ->orderBy('ta.created_at', 'ASC')
+                ->paginate(20);
             }else{
-                $sql .= " ORDER BY ta.created_at ASC";
-
+                $data = DB::table('karya AS ta')
+                ->leftjoin('kompetisi AS tb','tb.id', 'ta.kompetisi_id')
+                ->leftjoin('peserta AS tc','ta.peserta_id','tc.id')
+                ->select('ta.id As id_karya','ta.link_youtube','ta.deskripsi','ta.created_at', 'ta.gambar_karya', 'ta.judul_karya', 'tb.judul_kompetisi', 'tc.nama_lengkap')
+                ->orderBy('tc.nama_lengkap', 'ASC')
+                ->paginate(20);
+                
             }
         }
-        $data = DB::table( DB::raw("($sql) AS a"))->paginate(2);
+
+
+        // dd($data);
         if ($request->ajax()) {
             return view('home.list-pameran', compact('data'))->render();
         }
+        $total_karya = DB::table('karya')->count();
         // dd($data);
-        return view('home.pameran', compact('data'));
+        return view('home.pameran', compact('data','total_karya'));
     }
 
     /**
