@@ -75,3 +75,4 @@ Route::get('peserta/pemenang/kompetisi/{id}', 'Peserta\CariKompetisiController@p
 
 //Home
 Route::get('home/pilih-daftar', function () {return view('home.pilih-daftar');})->name('home.pilih-daftar');
+Route::get('home/pameran', 'PameranController@index')->name('home.pameran');

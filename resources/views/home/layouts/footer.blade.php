@@ -7,7 +7,8 @@
             <div class="col-lg-3 responsive-column">
                 <div class="footer-item">
                     <div class="footer-logo padding-bottom-30px">
-                        <a href="index.html" class="foot__logo"><img src={{ asset("/images/logo.png")}} alt="logo" height="40" width="40"></a>
+                        <a href="index.html" class="foot__logo"><img src={{ asset("/images/logo.png")}} alt="logo"
+                                height="40" width="40"></a>
                     </div><!-- end logo -->
                     <p class="footer__desc">Morbi convallis bibendum urna ut viverra. Maecenas consequat</p>
                     <ul class="list-items pt-3">
@@ -102,3 +103,33 @@
 <!-- ================================
        START FOOTER AREA
 ================================= -->
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="la la-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+
+<!-- Template JS Files -->
+<script src={{ asset("js/jquery-3.4.1.min.js") }}></script>
+<script src={{ asset("js/jquery-ui.js") }}></script>
+<script src={{ asset("js/popper.min.js") }}></script>
+<script src={{ asset("js/bootstrap.min.js") }}></script>
+<script src={{ asset("js/bootstrap-select.min.js") }}></script>
+<script src={{ asset("js/moment.min.js") }}></script>
+<script src={{ asset("js/daterangepicker.js") }}></script>
+<script src={{ asset("js/owl.carousel.min.js") }}></script>
+<script src={{ asset("js/jquery.fancybox.min.js") }}></script>
+<script src={{ asset("js/jquery.countTo.min.js") }}></script>
+<script src={{ asset("js/animated-headline.js") }}></script>
+<script src={{ asset("js/jquery.sparkline.js") }}></script>
+<script src={{ asset("js/dashboard.js") }}></script>
+<!-- <script src={{ asset("js/chart.js") }}></script>
+<script src={{ asset("js/chart.extension.js") }}></script> -->
+<!-- <script src={{ asset("js/bar-chart.js") }}></script>
+<script src={{ asset("js/line-chart.js") }}></script> -->
+<script src={{ asset("js/jquery.ripples-min.js") }}></script>
+<script src={{ asset("js/main.js") }}></script>
+</body>
+
+</html>
