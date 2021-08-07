@@ -57,7 +57,7 @@
                                 <ul>
                                     <li><a href="/">Beranda</a></li>
                                     <li><a href="{{ route('home.pameran') }}">Pameran</a></li>
-                                    <li><a href="#">Kompetisi</a></li>
+                                    <li><a href="{{ route('home.kompetisi') }}">Kompetisi</a></li>
 									<li><a href="#">Tentang Kami</a></li>  
                                 </ul>
                             </nav>

@@ -44,9 +44,6 @@ Route::group(['middleware' => 'CekPenyelenggaraMiddleware'], function () {
     Route::get('penyelenggara/pengumuman', 'Penyelenggara\PengumumanController@PengumumanPage')->name('penyelenggara.pengumuman');
     Route::get('penyelenggara/bantuan', 'Penyelenggara\BantuanController@BantuanPage')->name('penyelenggara.bantuan');
     Route::get('penyelenggara/pengaturan', 'Penyelenggara\PengaturanController@PengaturanPage')->name('penyelenggara.pengaturan');
-    Route::get('/download_poster/{file}', 'Penyelenggara\AturKompetisiController@download_poster');
-    Route::get('/download_surat_pernyataan/{file}', 'Penyelenggara\AturKompetisiController@download_surat_pernyataan');
-    Route::get('/download_panduan/{file}', 'Penyelenggara\AturKompetisiController@download_panduan');
     Route::get('penyelenggara/daftar/karya/per_kompetisi/{id}', 'Penyelenggara\ListKaryaController@show')->name('list_karya.show');
     Route::get('penyelenggara/daftar/karya/per_kompetisi', 'Penyelenggara\ListKaryaController@dataDT')->name('list_karya.dataDT');
     Route::get('read_all/notif/penyelenggara', 'Peserta\CariKompetisiController@read_all_penyelenggara')->name('read_notif.penyelenggara');
@@ -55,6 +52,9 @@ Route::group(['middleware' => 'CekPenyelenggaraMiddleware'], function () {
     Route::get('penyelenggara/daftar/karya/per_kompetisi/download/berkas_daftar/{file}', 'Penyelenggara\AturKompetisiController@download_berkas_daftar');
 });
 
+Route::get('/download_poster/{file}', 'Penyelenggara\AturKompetisiController@download_poster');
+Route::get('/download_surat_pernyataan/{file}', 'Penyelenggara\AturKompetisiController@download_surat_pernyataan');
+Route::get('/download_panduan/{file}', 'Penyelenggara\AturKompetisiController@download_panduan');
 //Peserta
 Route::group(['middleware' => 'CekPesertaMiddleware'], function () {
 Route::get('peserta/logout', 'Auth\PesertaController@Logout')->name('peserta.logout');
@@ -76,3 +76,4 @@ Route::get('peserta/pemenang/kompetisi/{id}', 'Peserta\CariKompetisiController@p
 //Home
 Route::get('home/pilih-daftar', function () {return view('home.pilih-daftar');})->name('home.pilih-daftar');
 Route::get('home/pameran', 'PameranController@index')->name('home.pameran');
+Route::get('home/kompetisi', 'KompetisiController@index')->name('home.kompetisi');

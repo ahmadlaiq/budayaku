@@ -6,7 +6,7 @@
                 <div class="col-lg-6">
                     <div class="breadcrumb-content">
                         <div class="section-heading">
-                            <h2 class="sec__title text-white">List Pameran</h2>
+                            <h2 class="sec__title text-white">List Kompetisi</h2>
                         </div>
                     </div><!-- end breadcrumb-content -->
                 </div><!-- end col-lg-6 -->
@@ -14,8 +14,8 @@
                     <div class="breadcrumb-list text-right">
                         <ul class="list-items">
                             <li><a href="index.html">Home</a></li>
-                            <li>Pameran</li>
-                            <li>List Pameran</li>
+                            <li>Kompetisi</li>
+                            <li>List Kompetisi</li>
                         </ul>
                     </div><!-- end breadcrumb-list -->
                 </div><!-- end col-lg-6 -->
@@ -35,7 +35,7 @@
                 <div class="filter-wrap margin-bottom-30px">
                     <div class="filter-top d-flex align-items-center justify-content-between pb-4">
                         <div>
-                            <h3 class="title font-size-24">{{ $total_karya }} Karya Ditemukan</h3>
+                            <h3 class="title font-size-24">{{ $total_kompetisi }} Kompetisi Ditemukan</h3>
                             <!-- <p class="font-size-14 line-height-20 pt-1">Book with confidence: No tour booking fees</p> -->
                         </div>
                     </div><!-- end filter-top -->
@@ -62,7 +62,7 @@
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
         <div class="row" id="item-lists">
-            @include('home.list-pameran')
+            @include('home.list-kompetisi')
         </div><!-- end row -->
     </div><!-- end container -->
 </section>

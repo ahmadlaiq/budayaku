@@ -68,6 +68,10 @@ class AturKompetisiController extends Controller
         $file_path = public_path('panduan/'.$file_name);
         return response()->download($file_path);
     }
+    public function download_panduan($file_name) {
+        $file_path = public_path('panduan/'.$file_name);
+        return response()->download($file_path);
+    }
     public function download_gambar($file_name) {
         $file_path = public_path('gambar_karya/'.$file_name);
         return response()->download($file_path);
