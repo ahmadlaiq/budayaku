@@ -22,9 +22,9 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end breadcrumb-wrap -->
-    <div class="bread-svg-box">
+    {{-- <div class="bread-svg-box">
         <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="100 0 50 10 0 0 0 10 100 10"></polygon></svg>
-    </div><!-- end bread-svg -->
+    </div><!-- end bread-svg --> --}}
 </section>
 
 <section class="info-area info-bg padding-top-100px padding-bottom-60px">
@@ -43,9 +43,9 @@
                         <i class="la la-sign-in"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title">Daftar</h4>
+                        <h4 class="info__title">Buat Akun</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Daftarkan dirimu untuk mengikuti kompetisi.
                         </p>
                         <span class="info__num">1</span>
                     </div><!-- end info-content -->
@@ -59,7 +59,7 @@
                     <div class="info-content">
                         <h4 class="info__title">Upload Karyamu</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Upload karya seni terbaikmu dan menangkan kompetisi.
                         </p>
                         <span class="info__num">2</span>
                     </div><!-- end info-content -->
@@ -73,7 +73,7 @@
                     <div class="info-content">
                         <h4 class="info__title">Dapatkan Hadiah</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Dapatkan hadiah menarik untuk mengembangkan kreatifitasmu.
                         </p>
                         <span class="info__num">3</span>
                     </div><!-- end info-content -->
@@ -93,7 +93,7 @@
                     <canvas width="1170" height="487" style="position: absolute; inset: 0px; z-index: -1;"></canvas></div>
                     <div class="video-content-box">
                         <div class="section-heading">
-                            <h2 class="sec__title text-white line-height-55">Share the Beauty of Your <br> Culture to the World</h2>
+                            <h2 class="sec__title text-white line-height-55">Bagikan Keindahan Budayamu <br> Kepada Dunia</h2>
                         </div><!-- end section-heading -->
                         <div class="btn-box pt-4">
                             <a href="#" class="icon-element text-white" data-fancybox="video" data-src="https://www.youtube.com/watch?v=0GZSfBuhf6Y" data-speed="700">
@@ -121,12 +121,13 @@
             <div class="col-lg-4 responsive-column">
                 <div class="icon-box">
                     <div class="info-icon">
-                        <i class="la la-money"></i>
+                        <i class="la la-certificate"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title">Earn an additional income</h4>
+                        <h4 class="info__title">Tersedia Banyak Kompetisi</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Mempermudah pencari kompetisi dalam mendapatkan info dan 
+                            berpartisipasi dalam kompetisi budaya.
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
@@ -137,9 +138,10 @@
                         <span><i class="la la-users"></i></span>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title">Open your network</h4>
+                        <h4 class="info__title">Mudah Memanajemen Kompetisi</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Mempermudah penyelenggara kompetisi dalam membuat 
+                            dan memanajemen kompetisi secara daring
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
@@ -147,12 +149,12 @@
             <div class="col-lg-4 responsive-column">
                 <div class="icon-box">
                     <div class="info-icon">
-                        <span><i class="la la-language"></i></span>
+                        <span><i class="la la-play-circle"></i></span>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title line-height-26">Practice your language</h4>
+                        <h4 class="info__title line-height-26">Pameran Budaya Indonesia</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Menjadi pusat data budaya yang ada di Indonesia dengan fitur pameran budaya.
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
@@ -161,7 +163,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="btn-box">
-                    <a href="#" class="theme-btn">Daftar Sekarang</a>
+                    <a href="home/pilih-daftar" class="theme-btn">Daftar Sekarang</a>
                 </div>
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
@@ -293,7 +295,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="btn-box text-center pt-4">
-                    <a href="blog-grid.html" class="theme-btn">Show All Competition</a>
+                    <a href="{{route('home.kompetisi')}}" class="theme-btn">Tampilkan Semua Kompetisi</a>
                 </div>
             </div>
         </div>
@@ -316,7 +318,7 @@
                         <div class="card-header" id="faqHeadingOne">
                             <h2 class="mb-0">
                                 <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
-                                    <span>How will I open a account?</span>
+                                    <span> Apakah website ini terpercaya?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
@@ -334,7 +336,7 @@
                         <div class="card-header" id="faqHeadingTwo">
                             <h2 class="mb-0">
                                 <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
-                                    <span>How do I update or extend my availabilities?</span>
+                                    <span> Bagaimana cara mendaftar sebagai penyelenggara?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
@@ -352,7 +354,7 @@
                         <div class="card-header" id="faqHeadingThree">
                             <h2 class="mb-0">
                                 <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
-                                    <span> How do I increase conversion rate?</span>
+                                    <span> Bagaimana cara mendaftar sebagai peserta?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
@@ -370,7 +372,7 @@
                         <div class="card-header" id="faqHeadingFour">
                             <h2 class="mb-0">
                                 <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
-                                    <span> How do I upload products?</span>
+                                    <span> Adakah persyaratan khusus dalam mendaftar?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
@@ -388,7 +390,7 @@
                         <div class="card-header" id="faqHeadingFive">
                             <h2 class="mb-0">
                                 <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
-                                    <span>How will I receive my payment?</span>
+                                    <span> Bagaiaman proses penyerahan hadiah?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
@@ -404,41 +406,41 @@
                     </div><!-- end card -->
                 </div>
                 <div class="accordion-help-text pt-2">
-                    <p class="font-size-14 font-weight-regular">Any questions? Just visit our <a href="#" class="color-text">Help center</a> or <a href="#" class="color-text">Contact Us</a></p>
+                    <p class="font-size-14 font-weight-regular">Ada Pertanyaan? Silahkan kunjungi <a href="#" class="color-text">Help center</a> or <a href="#" class="color-text">Contact Us</a></p>
                 </div>
             </div><!-- end col-lg-7 -->
             <div class="col-lg-5">
                 <div class="faq-forum pl-4">
                     <div class="form-box">
                         <div class="form-title-wrap">
-                            <h3 class="title">Still have question?</h3>
+                            <h3 class="title">Masih ada pertanyaan?</h3>
                         </div><!-- form-title-wrap -->
                         <div class="form-content">
                             <div class="contact-form-action">
                                 <form method="post">
                                     <div class="input-box">
-                                        <label class="label-text">Your Name</label>
+                                        <label class="label-text">Nama Kamu</label>
                                         <div class="form-group">
                                             <span class="la la-user form-icon"></span>
                                             <input class="form-control" type="text" name="text" placeholder="Your name">
                                         </div>
                                     </div>
                                     <div class="input-box">
-                                        <label class="label-text">Your Email</label>
+                                        <label class="label-text">Email</label>
                                         <div class="form-group">
                                             <span class="la la-envelope-o form-icon"></span>
                                             <input class="form-control" type="email" name="email" placeholder="Email address">
                                         </div>
                                     </div>
                                     <div class="input-box">
-                                        <label class="label-text">Message</label>
+                                        <label class="label-text">Pesan</label>
                                         <div class="form-group">
                                             <span class="la la-pencil form-icon"></span>
                                             <textarea class="message-control form-control" name="message" placeholder="Write message"></textarea>
                                         </div>
                                     </div>
                                     <div class="btn-box">
-                                        <button type="button" class="theme-btn">Send Message</button>
+                                        <button type="button" class="theme-btn">Kirim Pesan</button>
                                     </div>
                                 </form>
                             </div><!-- end contact-form-action -->
@@ -455,8 +457,8 @@
         <div class="row align-items-center">
             <div class="col-lg-7">
                 <div class="section-heading">
-                    <p class="sec__desc text-white-50 pb-1">Get Updates &amp; More</p>
-                    <h2 class="sec__title font-size-30 text-white">Thoughtful thoughts to your inbox</h2>
+                    <p class="sec__desc text-white-50 pb-1">Dapatkan Update &amp; Info Menarik.</p>
+                    <h2 class="sec__title font-size-30 text-white">Awali Kreatifitasmu Bersama Budayaku!</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-7 -->
             <div class="col-lg-5">
@@ -464,12 +466,12 @@
                     <div class="contact-form-action">
                         <form action="#">
                             <div class="input-box">
-                                <label class="label-text text-white">Enter email address</label>
+                                <label class="label-text text-white">Masukkan Alamat Email.</label>
                                 <div class="form-group mb-0">
                                     <span class="la la-envelope form-icon"></span>
                                     <input class="form-control" type="email" name="email" placeholder="Email address">
-                                    <button class="theme-btn theme-btn-small submit-btn" type="submit">Subscribe</button>
-                                    <span class="font-size-14 pt-1 text-white-50"><i class="la la-lock mr-1"></i>Don't worry your information is safe with us.</span>
+                                    <button class="theme-btn theme-btn-small submit-btn" type="submit">Berlangganan</button>
+                                    <span class="font-size-14 pt-1 text-white-50"><i class="la la-lock mr-1"></i>Jangan khawatir, informasimu aman bersama kami.</span>
                                 </div>
                             </div>
                         </form>
