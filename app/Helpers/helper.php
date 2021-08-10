@@ -30,3 +30,8 @@ function get_selisih($tgl){
 function session_penyelenggara(){
     return Auth::guard('penyelenggara')->user();
 }
+
+function rekomendasi_kompetisi(){
+    $sql = "select ta.*, count(tb.kompetisi_id) total_pendaftar from kompetisi ta INNER JOIN karya tb ON tb.kompetisi_id = ta.id GROUP BY ta.id ORDER BY count(tb.kompetisi_id) DESC , ta.biaya_pendaftaran ASC LIMIT 3 ";
+    return DB::select($sql);
+}

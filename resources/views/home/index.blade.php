@@ -1,4 +1,3 @@
-
 <!-- end cssload-loader -->
 
 @include('home.layouts.header')
@@ -12,7 +11,8 @@
                         <div class="section-heading">
                             <h2 class="sec__title line-height-55 text-white">Mari Berkompetisi
                                 <br> Menciptakan Kreasi</h2>
-                            <p class="sec__desc pt-2 text-white">Budayaku mewadahi kompetisi budaya di Indonesia.<br> Bergabung dengan kami, ciptakan kreasi terbaik kapanpun dan dimanapun berada.</p>
+                            <p class="sec__desc pt-2 text-white">Budayaku mewadahi kompetisi budaya di Indonesia.<br>
+                                Bergabung dengan kami, ciptakan kreasi terbaik kapanpun dan dimanapun berada.</p>
                         </div>
                         <div class="btn-box pt-4">
                             <a href="{{ route('home.pilih-daftar') }}" class="theme-btn border-0">Daftar Sekarang</a>
@@ -23,7 +23,9 @@
         </div><!-- end container -->
     </div><!-- end breadcrumb-wrap -->
     <div class="bread-svg-box">
-        <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="100 0 50 10 0 0 0 10 100 10"></polygon></svg>
+        <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+            <polygon points="100 0 50 10 0 0 0 10 100 10"></polygon>
+        </svg>
     </div><!-- end bread-svg -->
 </section>
 
@@ -90,13 +92,16 @@
                 <div class="video-content z-index-1">
                     <div class="video-content-img ripple-bg jquery-ripples">
                         <img src="images/bg-jmb.jpg" alt="">
-                    <canvas width="1170" height="487" style="position: absolute; inset: 0px; z-index: -1;"></canvas></div>
+                        <canvas width="1170" height="487" style="position: absolute; inset: 0px; z-index: -1;"></canvas>
+                    </div>
                     <div class="video-content-box">
                         <div class="section-heading">
-                            <h2 class="sec__title text-white line-height-55">Share the Beauty of Your <br> Culture to the World</h2>
+                            <h2 class="sec__title text-white line-height-55">Share the Beauty of Your <br> Culture to
+                                the World</h2>
                         </div><!-- end section-heading -->
                         <div class="btn-box pt-4">
-                            <a href="#" class="icon-element text-white" data-fancybox="video" data-src="https://www.youtube.com/watch?v=0GZSfBuhf6Y" data-speed="700">
+                            <a href="#" class="icon-element text-white" data-fancybox="video"
+                                data-src="https://www.youtube.com/watch?v=0GZSfBuhf6Y" data-speed="700">
                                 <i class="la la-play"></i>
                             </a>
                         </div>
@@ -178,23 +183,32 @@
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
         <div class="row padding-top-50px">
+            @foreach(rekomendasi_kompetisi() as $d)
             <div class="col-lg-4 responsive-column">
                 <div class="card-item blog-card">
                     <div class="card-img">
-                        <img src="images/blog-img.jpg" alt="blog-img">
+                        <img src="{{ asset("poster/".$d->poster) }}" alt="blog-img">
                         <div class="card-body">
-                            <h3 class="card-title line-height-26"><a href="{{ route('peserta.login')}}">Kompetisi Tari Jaipong Tingkat Nasional</a></h3>
+                            <h3 class="card-title line-height-26"><a data-toggle="modal"
+                                    data-target="#exampleModalCenter{{ $d->id }}"
+                                    type="button">{{$d->judul_kompetisi}}</a>
+                            </h3>
                             <p class="card-meta">
                                 <span class="post__date"> Total Hadiah</span>
                                 <span class="post-dot"></span>
-                                <span class="post__time">Rp.50.000.000</span>
+                                <span class="post__time">Rp.{{ number_format($d->hadiah,2)}}</span>
+                            </p>
+                            <p class="card-meta">
+                                <span class="post__date"> Jumlah Peserta Terdaftar</span>
+                                <span class="post-dot"></span>
+                                <span class="post__time">{{ $d->total_pendaftar }} Karya</span>
                             </p>
                         </div>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <div class="author-content d-flex align-items-center">
                             <div class="author-img">
-                                <img src="images/small-team1.jpg" alt="testimonial image">
+                                <img src="{{ asset("poster/".$d->poster) }}" alt="testimonial image">
                             </div>
                             <div class="author-bio">
                                 <a href="#" class="author__title">Pemkab Gresik</a>
@@ -215,80 +229,76 @@
                     </div>
                 </div><!-- end card-item -->
             </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item blog-card">
-                    <div class="card-img">
-                        <img src="images/blog-img.jpg" alt="blog-img">
-                        <div class="card-body">
-                            <h3 class="card-title line-height-26"><a href="{{ route('peserta.login')}}">Kompetisi Tari Jaipong Tingkat Nasional</a></h3>
-                            <p class="card-meta">
-                                <span class="post__date"> Total Hadiah</span>
-                                <span class="post-dot"></span>
-                                <span class="post__time">Rp.50.000.000</span>
-                            </p>
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" id="exampleModalCenter{{ $d->id }}" role="dialog"
+                aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Detail Kompetisi</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>Judul Kompetisi</label>
+                                    <h3>{{ $d->judul_kompetisi }}</h3>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Tanggal diBuka</label>
+                                    <input type="email" readonly value="{{ $d->tgl_mulai }}"
+                                        class="form-control text-center" id="inputEmail4" placeholder="Email">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Tanggal diTutup</label>
+                                    <input type="text" readonly value="{{ $d->tgl_akhir }}"
+                                        class="form-control text-center" id="inputPassword4" placeholder="Password">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Biaya Pendaftaran</label>
+                                    <input type="email" readonly
+                                        value="Rp. {{ number_format($d->biaya_pendaftaran,2) }}"
+                                        class="form-control text-center" id="inputEmail4" placeholder="Email">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Hadiah Kompetisi</label>
+                                    <input type="text" readonly value="Rp. {{ number_format($d->hadiah,2) }}"
+                                        class="form-control text-center" id="inputPassword4" placeholder="Password">
+                                </div>
+                                <div class="col-sm-12">
+                                    <label>Deskripsi Kompetisi</label>
+                                    <textarea readonly class="form-control"
+                                        rows="7">{{ $d->deskirpsi_kompetisi }}</textarea>
+                                </div>
+                                <div class="col-sm-12">
+                                    <label>Persyaratan Peserta</label>
+                                    <textarea readonly class="form-control"
+                                        rows="7">{{ $d->persyaratan_peserta }}</textarea>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <a class="btn btn-sm btn-info" href="{{ url('download_poster/'.$d->poster) }}"><i
+                                            class="fa fa-download"> Download Poster</i></a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a class="btn btn-sm btn-info" href="{{ url('download_panduan/'.$d->panduan) }}"><i
+                                            class="fa fa-download"> Download Panduan</i></a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a class="btn btn-sm btn-info"
+                                        href="{{ url('download_surat_pernyataan/'.$d->surat_pernyataan) }}"><i
+                                            class="fa fa-download">
+                                            Download Surat Pernyataan</i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <div class="author-content d-flex align-items-center">
-                            <div class="author-img">
-                                <img src="images/small-team1.jpg" alt="testimonial image">
-                            </div>
-                            <div class="author-bio">
-                                <a href="#" class="author__title">Pemkab Surabaya</a>
-                            </div>
-                        </div>
-                        <div class="post-share">
-                            <ul>
-                                <li>
-                                    <i class="la la-share icon-element"></i>
-                                    <ul class="post-share-dropdown d-flex align-items-center">
-                                        <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                                        <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item blog-card">
-                    <div class="card-img">
-                        <img src="images/blog-img.jpg" alt="blog-img">
-                        <div class="card-body">
-                            <h3 class="card-title line-height-26"><a href="{{ route('peserta.login')}}">Kompetisi Tari Jaipong Tingkat Nasional</a></h3>
-                            <p class="card-meta">
-                                <span class="post__date"> Total Hadiah</span>
-                                <span class="post-dot"></span>
-                                <span class="post__time">Rp.50.000.000</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <div class="author-content d-flex align-items-center">
-                            <div class="author-img">
-                                <img src="images/small-team1.jpg" alt="testimonial image">
-                            </div>
-                            <div class="author-bio">
-                                <a href="#" class="author__title">Dinas Pariwisata</a>
-                            </div>
-                        </div>
-                        <div class="post-share">
-                            <ul>
-                                <li>
-                                    <i class="la la-share icon-element"></i>
-                                    <ul class="post-share-dropdown d-flex align-items-center">
-                                        <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                                        <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
+                </div>
+            </div>
+            @endforeach
         </div><!-- end row -->
         <div class="row">
             <div class="col-lg-12">
@@ -315,14 +325,17 @@
                     <div class="card">
                         <div class="card-header" id="faqHeadingOne">
                             <h2 class="mb-0">
-                                <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                                <button class="btn btn-link d-flex align-items-center justify-content-between"
+                                    type="button" data-toggle="collapse" data-target="#faqCollapseOne"
+                                    aria-expanded="true" aria-controls="faqCollapseOne">
                                     <span>How will I open a account?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
                             </h2>
                         </div>
-                        <div id="faqCollapseOne" class="collapse show" aria-labelledby="faqHeadingOne" data-parent="#accordionExample">
+                        <div id="faqCollapseOne" class="collapse show" aria-labelledby="faqHeadingOne"
+                            data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                     have suffered alteration in some form, by injected humour, or randomised words
@@ -333,14 +346,17 @@
                     <div class="card">
                         <div class="card-header" id="faqHeadingTwo">
                             <h2 class="mb-0">
-                                <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                                <button class="btn btn-link d-flex align-items-center justify-content-between"
+                                    type="button" data-toggle="collapse" data-target="#faqCollapseTwo"
+                                    aria-expanded="false" aria-controls="faqCollapseTwo">
                                     <span>How do I update or extend my availabilities?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
                             </h2>
                         </div>
-                        <div id="faqCollapseTwo" class="collapse" aria-labelledby="faqHeadingTwo" data-parent="#accordionExample">
+                        <div id="faqCollapseTwo" class="collapse" aria-labelledby="faqHeadingTwo"
+                            data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                     have suffered alteration in some form, by injected humour, or randomised words
@@ -351,14 +367,17 @@
                     <div class="card">
                         <div class="card-header" id="faqHeadingThree">
                             <h2 class="mb-0">
-                                <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                                <button class="btn btn-link d-flex align-items-center justify-content-between"
+                                    type="button" data-toggle="collapse" data-target="#faqCollapseThree"
+                                    aria-expanded="false" aria-controls="faqCollapseThree">
                                     <span> How do I increase conversion rate?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
                             </h2>
                         </div>
-                        <div id="faqCollapseThree" class="collapse" aria-labelledby="faqHeadingThree" data-parent="#accordionExample">
+                        <div id="faqCollapseThree" class="collapse" aria-labelledby="faqHeadingThree"
+                            data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                     have suffered alteration in some form, by injected humour, or randomised words
@@ -369,14 +388,17 @@
                     <div class="card">
                         <div class="card-header" id="faqHeadingFour">
                             <h2 class="mb-0">
-                                <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                                <button class="btn btn-link d-flex align-items-center justify-content-between"
+                                    type="button" data-toggle="collapse" data-target="#faqCollapseFour"
+                                    aria-expanded="false" aria-controls="faqCollapseFour">
                                     <span> How do I upload products?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
                             </h2>
                         </div>
-                        <div id="faqCollapseFour" class="collapse" aria-labelledby="faqHeadingFour" data-parent="#accordionExample">
+                        <div id="faqCollapseFour" class="collapse" aria-labelledby="faqHeadingFour"
+                            data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                     have suffered alteration in some form, by injected humour, or randomised words
@@ -387,14 +409,17 @@
                     <div class="card">
                         <div class="card-header" id="faqHeadingFive">
                             <h2 class="mb-0">
-                                <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                                <button class="btn btn-link d-flex align-items-center justify-content-between"
+                                    type="button" data-toggle="collapse" data-target="#faqCollapseFive"
+                                    aria-expanded="false" aria-controls="faqCollapseFive">
                                     <span>How will I receive my payment?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
                             </h2>
                         </div>
-                        <div id="faqCollapseFive" class="collapse" aria-labelledby="faqHeadingFive" data-parent="#accordionExample">
+                        <div id="faqCollapseFive" class="collapse" aria-labelledby="faqHeadingFive"
+                            data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                     have suffered alteration in some form, by injected humour, or randomised words
@@ -404,7 +429,8 @@
                     </div><!-- end card -->
                 </div>
                 <div class="accordion-help-text pt-2">
-                    <p class="font-size-14 font-weight-regular">Any questions? Just visit our <a href="#" class="color-text">Help center</a> or <a href="#" class="color-text">Contact Us</a></p>
+                    <p class="font-size-14 font-weight-regular">Any questions? Just visit our <a href="#"
+                            class="color-text">Help center</a> or <a href="#" class="color-text">Contact Us</a></p>
                 </div>
             </div><!-- end col-lg-7 -->
             <div class="col-lg-5">
@@ -427,14 +453,16 @@
                                         <label class="label-text">Your Email</label>
                                         <div class="form-group">
                                             <span class="la la-envelope-o form-icon"></span>
-                                            <input class="form-control" type="email" name="email" placeholder="Email address">
+                                            <input class="form-control" type="email" name="email"
+                                                placeholder="Email address">
                                         </div>
                                     </div>
                                     <div class="input-box">
                                         <label class="label-text">Message</label>
                                         <div class="form-group">
                                             <span class="la la-pencil form-icon"></span>
-                                            <textarea class="message-control form-control" name="message" placeholder="Write message"></textarea>
+                                            <textarea class="message-control form-control" name="message"
+                                                placeholder="Write message"></textarea>
                                         </div>
                                     </div>
                                     <div class="btn-box">
@@ -468,8 +496,10 @@
                                 <div class="form-group mb-0">
                                     <span class="la la-envelope form-icon"></span>
                                     <input class="form-control" type="email" name="email" placeholder="Email address">
-                                    <button class="theme-btn theme-btn-small submit-btn" type="submit">Subscribe</button>
-                                    <span class="font-size-14 pt-1 text-white-50"><i class="la la-lock mr-1"></i>Don't worry your information is safe with us.</span>
+                                    <button class="theme-btn theme-btn-small submit-btn"
+                                        type="submit">Subscribe</button>
+                                    <span class="font-size-14 pt-1 text-white-50"><i class="la la-lock mr-1"></i>Don't
+                                        worry your information is safe with us.</span>
                                 </div>
                             </div>
                         </form>
@@ -483,4 +513,3 @@
 
 
 @include('home.layouts.footer')
-
