@@ -22,11 +22,9 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end breadcrumb-wrap -->
-    <div class="bread-svg-box">
-        <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
-            <polygon points="100 0 50 10 0 0 0 10 100 10"></polygon>
-        </svg>
-    </div><!-- end bread-svg -->
+    {{-- <div class="bread-svg-box">
+        <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="100 0 50 10 0 0 0 10 100 10"></polygon></svg>
+    </div><!-- end bread-svg --> --}}
 </section>
 
 <section class="info-area info-bg padding-top-100px padding-bottom-60px">
@@ -96,8 +94,7 @@
                     </div>
                     <div class="video-content-box">
                         <div class="section-heading">
-                            <h2 class="sec__title text-white line-height-55">Share the Beauty of Your <br> Culture to
-                                the World</h2>
+                            <h2 class="sec__title text-white line-height-55">Bagikan Keindahan Budayamu <br> Kepada Dunia</h2>
                         </div><!-- end section-heading -->
                         <div class="btn-box pt-4">
                             <a href="#" class="icon-element text-white" data-fancybox="video"
@@ -327,10 +324,8 @@
                     <div class="card">
                         <div class="card-header" id="faqHeadingOne">
                             <h2 class="mb-0">
-                                <button class="btn btn-link d-flex align-items-center justify-content-between"
-                                    type="button" data-toggle="collapse" data-target="#faqCollapseOne"
-                                    aria-expanded="true" aria-controls="faqCollapseOne">
-                                    <span>How will I open a account?</span>
+                                <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                                    <span> Apakah website ini terpercaya?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
@@ -348,10 +343,8 @@
                     <div class="card">
                         <div class="card-header" id="faqHeadingTwo">
                             <h2 class="mb-0">
-                                <button class="btn btn-link d-flex align-items-center justify-content-between"
-                                    type="button" data-toggle="collapse" data-target="#faqCollapseTwo"
-                                    aria-expanded="false" aria-controls="faqCollapseTwo">
-                                    <span>How do I update or extend my availabilities?</span>
+                                <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                                    <span> Bagaimana cara mendaftar sebagai penyelenggara?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
@@ -369,10 +362,8 @@
                     <div class="card">
                         <div class="card-header" id="faqHeadingThree">
                             <h2 class="mb-0">
-                                <button class="btn btn-link d-flex align-items-center justify-content-between"
-                                    type="button" data-toggle="collapse" data-target="#faqCollapseThree"
-                                    aria-expanded="false" aria-controls="faqCollapseThree">
-                                    <span> How do I increase conversion rate?</span>
+                                <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                                    <span> Bagaimana cara mendaftar sebagai peserta?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
@@ -390,10 +381,8 @@
                     <div class="card">
                         <div class="card-header" id="faqHeadingFour">
                             <h2 class="mb-0">
-                                <button class="btn btn-link d-flex align-items-center justify-content-between"
-                                    type="button" data-toggle="collapse" data-target="#faqCollapseFour"
-                                    aria-expanded="false" aria-controls="faqCollapseFour">
-                                    <span> How do I upload products?</span>
+                                <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                                    <span> Adakah persyaratan khusus dalam mendaftar?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
@@ -411,10 +400,8 @@
                     <div class="card">
                         <div class="card-header" id="faqHeadingFive">
                             <h2 class="mb-0">
-                                <button class="btn btn-link d-flex align-items-center justify-content-between"
-                                    type="button" data-toggle="collapse" data-target="#faqCollapseFive"
-                                    aria-expanded="false" aria-controls="faqCollapseFive">
-                                    <span>How will I receive my payment?</span>
+                                <button class="btn btn-link d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                                    <span> Bagaiaman proses penyerahan hadiah?</span>
                                     <i class="la la-minus"></i>
                                     <i class="la la-plus"></i>
                                 </button>
@@ -431,8 +418,7 @@
                     </div><!-- end card -->
                 </div>
                 <div class="accordion-help-text pt-2">
-                    <p class="font-size-14 font-weight-regular">Any questions? Just visit our <a href="#"
-                            class="color-text">Help center</a> or <a href="#" class="color-text">Contact Us</a></p>
+                    <p class="font-size-14 font-weight-regular">Ada Pertanyaan? Silahkan kunjungi <a href="#" class="color-text">Help center</a> or <a href="#" class="color-text">Contact Us</a></p>
                 </div>
             </div><!-- end col-lg-7 -->
             <div class="col-lg-5">
@@ -498,10 +484,8 @@
                                 <div class="form-group mb-0">
                                     <span class="la la-envelope form-icon"></span>
                                     <input class="form-control" type="email" name="email" placeholder="Email address">
-                                    <button class="theme-btn theme-btn-small submit-btn"
-                                        type="submit">Subscribe</button>
-                                    <span class="font-size-14 pt-1 text-white-50"><i class="la la-lock mr-1"></i>Don't
-                                        worry your information is safe with us.</span>
+                                    <button class="theme-btn theme-btn-small submit-btn" type="submit">Berlangganan</button>
+                                    <span class="font-size-14 pt-1 text-white-50"><i class="la la-lock mr-1"></i>Jangan khawatir, informasimu aman bersama kami.</span>
                                 </div>
                             </div>
                         </form>
