@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Budayaku - Platform Kompetisi Budaya Indonesia</title>
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="{{asset('images/favicon.png')}}">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -58,7 +58,7 @@
                                     <li><a href="/">Beranda</a></li>
                                     <li><a href="{{ route('home.pameran') }}">Pameran</a></li>
                                     <li><a href="{{ route('home.kompetisi') }}">Kompetisi</a></li>
-									<li><a href="#">Tentang Kami</a></li>  
+									<li><a href="{{ route('home.tentangkami') }}">Tentang Kami</a></li>  
                                 </ul>
                             </nav>
                         </div><!-- end main-menu-content -->

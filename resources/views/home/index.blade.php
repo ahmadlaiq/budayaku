@@ -45,9 +45,9 @@
                         <i class="la la-sign-in"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title">Daftar</h4>
+                        <h4 class="info__title">Buat Akun</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Daftarkan dirimu untuk mengikuti kompetisi.
                         </p>
                         <span class="info__num">1</span>
                     </div><!-- end info-content -->
@@ -61,7 +61,7 @@
                     <div class="info-content">
                         <h4 class="info__title">Upload Karyamu</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Upload karya seni terbaikmu dan menangkan kompetisi.
                         </p>
                         <span class="info__num">2</span>
                     </div><!-- end info-content -->
@@ -75,7 +75,7 @@
                     <div class="info-content">
                         <h4 class="info__title">Dapatkan Hadiah</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Dapatkan hadiah menarik untuk mengembangkan kreatifitasmu.
                         </p>
                         <span class="info__num">3</span>
                     </div><!-- end info-content -->
@@ -126,12 +126,13 @@
             <div class="col-lg-4 responsive-column">
                 <div class="icon-box">
                     <div class="info-icon">
-                        <i class="la la-money"></i>
+                        <i class="la la-certificate"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title">Earn an additional income</h4>
+                        <h4 class="info__title">Tersedia Banyak Kompetisi</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Mempermudah pencari kompetisi dalam mendapatkan info dan 
+                            berpartisipasi dalam kompetisi budaya.
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
@@ -142,9 +143,10 @@
                         <span><i class="la la-users"></i></span>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title">Open your network</h4>
+                        <h4 class="info__title">Mudah Memanajemen Kompetisi</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Mempermudah penyelenggara kompetisi dalam membuat 
+                            dan memanajemen kompetisi secara daring
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
@@ -152,12 +154,12 @@
             <div class="col-lg-4 responsive-column">
                 <div class="icon-box">
                     <div class="info-icon">
-                        <span><i class="la la-language"></i></span>
+                        <span><i class="la la-play-circle"></i></span>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title line-height-26">Practice your language</h4>
+                        <h4 class="info__title line-height-26">Pameran Budaya Indonesia</h4>
                         <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio
+                            Menjadi pusat data budaya yang ada di Indonesia dengan fitur pameran budaya.
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
@@ -166,7 +168,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="btn-box">
-                    <a href="#" class="theme-btn">Daftar Sekarang</a>
+                    <a href="home/pilih-daftar" class="theme-btn">Daftar Sekarang</a>
                 </div>
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
@@ -303,7 +305,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="btn-box text-center pt-4">
-                    <a href="blog-grid.html" class="theme-btn">Show All Competition</a>
+                    <a href="{{route('home.kompetisi')}}" class="theme-btn">Tampilkan Semua Kompetisi</a>
                 </div>
             </div>
         </div>
@@ -437,20 +439,20 @@
                 <div class="faq-forum pl-4">
                     <div class="form-box">
                         <div class="form-title-wrap">
-                            <h3 class="title">Still have question?</h3>
+                            <h3 class="title">Masih ada pertanyaan?</h3>
                         </div><!-- form-title-wrap -->
                         <div class="form-content">
                             <div class="contact-form-action">
                                 <form method="post">
                                     <div class="input-box">
-                                        <label class="label-text">Your Name</label>
+                                        <label class="label-text">Nama Kamu</label>
                                         <div class="form-group">
                                             <span class="la la-user form-icon"></span>
                                             <input class="form-control" type="text" name="text" placeholder="Your name">
                                         </div>
                                     </div>
                                     <div class="input-box">
-                                        <label class="label-text">Your Email</label>
+                                        <label class="label-text">Email</label>
                                         <div class="form-group">
                                             <span class="la la-envelope-o form-icon"></span>
                                             <input class="form-control" type="email" name="email"
@@ -458,7 +460,7 @@
                                         </div>
                                     </div>
                                     <div class="input-box">
-                                        <label class="label-text">Message</label>
+                                        <label class="label-text">Pesan</label>
                                         <div class="form-group">
                                             <span class="la la-pencil form-icon"></span>
                                             <textarea class="message-control form-control" name="message"
@@ -466,7 +468,7 @@
                                         </div>
                                     </div>
                                     <div class="btn-box">
-                                        <button type="button" class="theme-btn">Send Message</button>
+                                        <button type="button" class="theme-btn">Kirim Pesan</button>
                                     </div>
                                 </form>
                             </div><!-- end contact-form-action -->
@@ -483,8 +485,8 @@
         <div class="row align-items-center">
             <div class="col-lg-7">
                 <div class="section-heading">
-                    <p class="sec__desc text-white-50 pb-1">Get Updates &amp; More</p>
-                    <h2 class="sec__title font-size-30 text-white">Thoughtful thoughts to your inbox</h2>
+                    <p class="sec__desc text-white-50 pb-1">Dapatkan Update &amp; Info Menarik.</p>
+                    <h2 class="sec__title font-size-30 text-white">Awali Kreatifitasmu Bersama Budayaku!</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-7 -->
             <div class="col-lg-5">
@@ -492,7 +494,7 @@
                     <div class="contact-form-action">
                         <form action="#">
                             <div class="input-box">
-                                <label class="label-text text-white">Enter email address</label>
+                                <label class="label-text text-white">Masukkan Alamat Email.</label>
                                 <div class="form-group mb-0">
                                     <span class="la la-envelope form-icon"></span>
                                     <input class="form-control" type="email" name="email" placeholder="Email address">
