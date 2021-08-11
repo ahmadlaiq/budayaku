@@ -247,12 +247,12 @@
                                 <div class="form-group col-md-6">
                                     <label for="inputEmail4">Tanggal diBuka</label>
                                     <input type="email" readonly value="{{ $d->tgl_mulai }}"
-                                        class="form-control text-center" id="inputEmail4" placeholder="Email">
+                                        class="form-control text-center" id="inputEmail4" placeholder="Tanggal">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputPassword4">Tanggal diTutup</label>
                                     <input type="text" readonly value="{{ $d->tgl_akhir }}"
-                                        class="form-control text-center" id="inputPassword4" placeholder="Password">
+                                        class="form-control text-center" id="inputPassword4" placeholder="Tanggal">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputEmail4">Biaya Pendaftaran</label>
