@@ -27,8 +27,7 @@
     <link rel="stylesheet" href={{ asset("css/jquery-ui.css") }}>
     <link rel="stylesheet" href={{ asset("css/flag-icon.min.css") }}>
     <link rel="stylesheet" href={{ asset("css/style.css") }}>
-    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('DataTables/datatables.min.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -240,14 +239,9 @@
     <script src={{ asset("js/animated-headline.js") }}></script>
     <script src={{ asset("js/jquery.sparkline.js") }}></script>
     <script src={{ asset("js/dashboard.js") }}></script>
-    <!-- <script src={{ asset("js/chart.js") }}></script> -->
-    <!-- <script src={{ asset("js/chart.extension.js") }}></script> -->
-    <!-- <script src={{ asset("js/bar-chart.js") }}></script> -->
-    <!-- <script src={{ asset("js/line-chart.js") }}></script> -->
     <script src={{ asset("js/jquery.ripples-min.js") }}></script>
     <script src={{ asset("js/main.js") }}></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="{{ asset('DataTables/datatables.min.js') }}"></script>
     @yield('datatabel')
 </body>
 

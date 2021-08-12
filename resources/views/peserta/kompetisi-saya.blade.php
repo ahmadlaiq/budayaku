@@ -26,7 +26,7 @@
     <div class="dashboard-main-content">
     
         <div class="container-fluid">
-            <table class="yajra-datatable" style="border:none; background:transparant;">
+            <table class="yajra-datatable" style="border:none; background:transparant;width:100%;">
                 <thead style="border:none"></thead>
                 <tbody>
                 </tbody>

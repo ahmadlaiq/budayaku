@@ -29,13 +29,6 @@
 </head>
 <body class="section-bg">
 <!-- start cssload-loader -->
-<div class="preloader" id="preloader">
-    <div class="loader">
-        <svg class="spinner" viewBox="0 0 50 50">
-            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-        </svg>
-    </div>
-</div>
 <!-- end cssload-loader -->
 
 @include('home.layouts.header')
@@ -144,10 +137,10 @@
 <script src={{ asset("js/animated-headline.js") }}></script>
 <script src={{ asset("js/jquery.sparkline.js") }}></script>
 <script src={{ asset("js/dashboard.js") }}></script>
-<script src={{ asset("js/chart.js") }}></script>
+<!-- <script src={{ asset("js/chart.js") }}></script>
 <script src={{ asset("js/chart.extension.js") }}></script>
 <script src={{ asset("js/bar-chart.js") }}></script>
-<script src={{ asset("js/line-chart.js") }}></script>
+<script src={{ asset("js/line-chart.js") }}></script> -->
 <script src={{ asset("js/jquery.ripples-min.js") }}></script>
 <script src={{ asset("js/main.js") }}></script>
 </body>
