@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <div class="menu-wrapper">
                     <div class="logo mr-5">
-                        <a href="index.html"><img src={{ asset("/images/logo.png")}} alt="logo" height="40" width="40"></a>
+                        
                         <div class="menu-toggler">
                             <i class="la la-bars"></i>
                             <i class="la la-times"></i>
@@ -13,7 +13,7 @@
                             <i class="la la-user"></i>
                         </div><!-- end user-menu-open -->
                     </div>
-                    <div class="dashboard-search-box">
+                    {{-- <div class="dashboard-search-box">
                         <div class="contact-form-action">
                             <form action="#">
                                 <div class="form-group mb-0">
@@ -22,7 +22,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="nav-btn ml-auto">
                         <div class="notification-wrap d-flex align-items-center">
                             <div class="notification-item mr-3">

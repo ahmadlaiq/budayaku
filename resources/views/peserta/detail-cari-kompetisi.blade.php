@@ -24,26 +24,7 @@
         </div>
     </div><!-- end dashboard-bread -->
     <div class="dashboard-main-content">
-        <section class="breadcrumb-area bread-bg-8 py-0">
-            <div class="breadcrumb-wrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="breadcrumb-btn">
-                                <div class="btn-box">
-                                    <a class="theme-btn" data-src="images/car-img.jpg" data-fancybox="gallery" data-caption="Showing image - 01" data-speed="700">
-                                        <i class="la la-download mr-2"></i>Unduh Panduan Peserta
-                                    </a>
-                                </div>
-                                <a class="d-none" data-fancybox="gallery" data-src="images/car-img2.jpg" data-caption="Showing image - 02" data-speed="700"></a>
-                                <a class="d-none" data-fancybox="gallery" data-src="images/car-img3.jpg" data-caption="Showing image - 03" data-speed="700"></a>
-                                <a class="d-none" data-fancybox="gallery" data-src="images/car-img4.jpg" data-caption="Showing image - 04" data-speed="700"></a>
-                            </div><!-- end breadcrumb-btn -->
-                        </div><!-- end col-lg-12 -->
-                    </div><!-- end row -->
-                </div><!-- end container -->
-            </div><!-- end breadcrumb-wrap -->
-        </section>
+        
             
             <section class="car-detail-area padding-bottom-90px">
                 <div class="single-content-navbar-wrap menu section-bg" id="single-content-navbar">
@@ -52,10 +33,13 @@
                             <div class="col-lg-12">
                                 <div class="single-content-nav" id="single-content-nav">
                                     <ul>
-                                        <li><a data-scroll="description" href="#description" class="scroll-link active">Detail Kompetisi</a></li>
+                                        <li><a data-scroll="description" href="#description" class="scroll-link active">Detail</a></li>
                                         <li><a data-scroll="faq" href="#faq" class="scroll-link">Persyaratan Peserta</a></li>
                                         <li><a data-scroll="reviews" href="#reviews" class="scroll-link">Kirim Karya</a></li>
+                                        <li><a data-scroll="panduan" href="#panduan" class="scroll-link">Panduan Peserta</a></li>
+                                        
                                     </ul>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -115,6 +99,13 @@
                                         <div class="single-content-item padding-top-40px padding-bottom-40px">
                                             <h3 class="title font-size-20">Persyaratan Peserta</h3>
                                             <p class="py-3">{{ $kompetisi->persyaratan_peserta }}</p>
+                                        </div><!-- end single-content-item -->
+                                        <div class="section-block"></div>
+                                    </div><!-- end faq -->
+                                    <div id="panduan" class="page-scroll">
+                                        <div class="single-content-item padding-top-40px padding-bottom-40px">
+                                            <h3 class="title font-size-20">Panduan Peserta</h3>
+                                            <p class="py-3"><button class="theme-btn theme-btn-small theme-btn-transparent" type="button"><i class="la la-download mr-1"></i> Unduh Panduan</button></p>
                                         </div><!-- end single-content-item -->
                                         <div class="section-block"></div>
                                     </div><!-- end faq -->
@@ -196,6 +187,10 @@
                                     </div><!-- end review-box -->
                                 </div><!-- end single-content-wrap -->
                             </div><!-- end col-lg-8 -->
+                            <div class="col-lg-3">
+                                
+                                    
+                            </div>
                         </div><!-- end row -->
                     </div><!-- end container -->
                 </div><!-- end single-content-box -->

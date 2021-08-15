@@ -4,14 +4,14 @@
             <i class="la la-times"></i>
         </div><!-- end menu-toggler -->
         <div class="author-content">
-            {{-- <div class="d-flex align-items-center">
-                <div class="author-img avatar-sm">
-                    <img src="/images/avatar.jpeg" alt="testimonial image">
-                </div> --}}
-                <div class="author-bio">
+            <div class="d-flex align-items-center"> 
+                <div class="logo ml-5">
+                    <a href="/"><img src={{ asset("/images/logo-hor.png")}} alt="logo" height="30"></a>
+                </div>
+                {{-- <div class="author-bio">
                     <h4 class="author__title">Budayaku.net </h4>
                     <span class="author__meta">Paltform Kompetisi Budaya Indonesia</span>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="sidebar-menu-wrap">
