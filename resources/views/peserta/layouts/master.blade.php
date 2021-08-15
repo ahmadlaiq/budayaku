@@ -27,8 +27,7 @@
     <link rel="stylesheet" href={{ asset("css/jquery-ui.css") }}>
     <link rel="stylesheet" href={{ asset("css/flag-icon.min.css") }}>
     <link rel="stylesheet" href={{ asset("css/style.css") }}>
-    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('DataTables/datatables.min.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -38,13 +37,13 @@
 
 <body class="section-bg">
     <!-- start cssload-loader -->
-    <div class="preloader" id="preloader">
+    <!-- <div class="preloader" id="preloader">
         <div class="loader">
             <svg class="spinner" viewBox="0 0 50 50">
                 <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
             </svg>
         </div>
-    </div>
+    </div> -->
     <!-- end cssload-loader -->
 
     <!-- ================================
@@ -241,10 +240,10 @@
     <script src={{ asset("js/animated-headline.js") }}></script>
     <script src={{ asset("js/jquery.sparkline.js") }}></script>
     <script src={{ asset("js/dashboard.js") }}></script>
-    <script src={{ asset("js/chart.js") }}></script>
+    <!-- <script src={{ asset("js/chart.js") }}></script>
     <script src={{ asset("js/chart.extension.js") }}></script>
     <script src={{ asset("js/bar-chart.js") }}></script>
-    <script src={{ asset("js/line-chart.js") }}></script>
+    <script src={{ asset("js/line-chart.js") }}></script> -->
     <script src={{ asset("js/jquery.ripples-min.js") }}></script>
     <script src={{ asset("js/main.js") }}></script>
     <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.0/js/plugins/piexif.min.js"
@@ -267,8 +266,7 @@
     </script>
     <!-- optionally if you need translation for your language then include the locale file as mentioned below (replace LANG.js with your language locale) -->
     <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.0/js/locales/LANG.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="{{ asset('DataTables/datatables.min.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('datatabel')
 </body>

@@ -54,7 +54,7 @@
             </div><!-- end row -->
 
 
-            <table class="yajra-datatable" style="border:none; background:transparant;">
+            <table class="yajra-datatable" style="border:none; background:transparant;width:100%;width:100%;">
                 <thead style="border:none"></thead>
                 <tbody>
                 </tbody>
