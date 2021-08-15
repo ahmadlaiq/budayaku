@@ -65,22 +65,11 @@
                 <div class="col-lg-7">
                     <div class="copy-right padding-top-30px">
                         <p class="copy__desc">
-                            © Copyright Trizen 2020. Made with
-                            <span class="la la-heart"></span> by <a
-                                href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
+                            &copy; Copyright Budayaku 2021. Made with
+                            <span class="la la-heart"></span> by <a href="https://instagram.com/budayaku_net">Tim Budayaku</a>
                         </p>
                     </div><!-- end copy-right -->
                 </div><!-- end col-lg-7 -->
-                <div class="col-lg-5">
-                    <div class="copy-right-content text-right padding-top-30px">
-                        <ul class="social-profile">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-github"></i></a></li>
-                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                        </ul>
-                    </div><!-- end copy-right-content -->
-                </div><!-- end col-lg-5 -->
             </div><!-- end row -->
         </div><!-- end container-fluid -->
     </div><!-- end dashboard-main-content -->
@@ -173,14 +162,14 @@
                     var div = `<div class="col-lg-12 template">
                         <div class="card-item card-item-list" style="margin-top:15px;">
                             <div class="card-img">
-                                <a href="hotel-single.html" class="d-block">
+                                <a href="detail-cari-kompetisi/` + row.id + `" class="d-block">
                                     <img src={{ asset("poster/` + row.poster + `") }} alt="hotel-img">
                                 </a>
                                 ` + row.status_kompetisi + `
 
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title"><a href="hotel-single.html">` + row.judul_kompetisi + `</a>
+                                <h3 class="card-title"><a href="detail-cari-kompetisi/` + row.id + `">` + row.judul_kompetisi + `</a>
                                 </h3>
                                 <div class="card-rating">
                                     <span class="">Deadline kompetisi:</span>
@@ -191,7 +180,6 @@
                                     <p>
                                         <span class="price__text">Total Hadiah </span><br>
                                         <span class="price__num">Rp.` + row.hadiah + `</span>
-
                                     </p>
                                 </div>
                                 <div class="col-sm-3">

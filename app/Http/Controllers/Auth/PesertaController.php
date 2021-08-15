@@ -49,7 +49,7 @@ class PesertaController extends Controller
         {
             // Redirect ke halaman penyelenggara jika berhasil
             //dd(Auth::guard('peserta'));
-           return redirect()->intended('/peserta/dashboard');
+           return redirect()->intended('/peserta/cari-kompetisi');
         }
         return redirect()->back();
     }
