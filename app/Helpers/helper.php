@@ -35,3 +35,32 @@ function rekomendasi_kompetisi(){
     $sql = "select ta.*, count(tb.kompetisi_id) total_pendaftar from kompetisi ta INNER JOIN karya tb ON tb.kompetisi_id = ta.id GROUP BY ta.id ORDER BY count(tb.kompetisi_id) DESC , ta.biaya_pendaftaran ASC LIMIT 3 ";
     return DB::select($sql);
 }
+function kompetisi_berakhir(){
+    $id = Auth::guard('penyelenggara')->user()->id;
+    $sql = "SELECT count(tgl_akhir) as total FROM kompetisi WHERE now() > tgl_akhir and penyelenggara_id = '$id'";
+    return  DB::table( DB::raw("($sql) AS a"))->first();
+}
+function kompetisi_berlangsung(){
+    $id = Auth::guard('penyelenggara')->user()->id;
+    $sql = "SELECT count(tgl_akhir) as total FROM kompetisi WHERE now() < tgl_akhir and penyelenggara_id = '$id'";
+    return  DB::table( DB::raw("($sql) AS a"))->first();
+}
+function karya_kompetisi(){
+    $id = Auth::guard('penyelenggara')->user()->id;
+    $sql = "select count(*) as total FROM karya ta LEFT JOIN kompetisi tb ON ta.kompetisi_id = tb.id WHERE tb.penyelenggara_id = '$id' GROUP BY tb.penyelenggara_id";
+    return  DB::table( DB::raw("($sql) AS a"))->first();
+}
+function kompetisi_mingguan(){
+    
+    $id = Auth::guard('penyelenggara')->user()->id;
+    $sql = "SELECT
+	count(*) AS total 
+FROM
+	karya ta
+	LEFT JOIN kompetisi tb ON ta.kompetisi_id = tb.id 
+WHERE
+	YEARWEEK( DATE_FORMAT(ta.created_at ,'%Y-%m-%d')) = YEARWEEK(NOW()) and tb.penyelenggara_id = '$id'
+GROUP BY
+	tb.penyelenggara_id";
+    return  DB::table( DB::raw("($sql) AS a"))->first();
+}
