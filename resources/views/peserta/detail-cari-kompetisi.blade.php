@@ -91,14 +91,14 @@
                                         <div class="section-block"></div>
                                         <div class="single-content-item padding-top-40px padding-bottom-40px">
                                             <h3 class="title font-size-20">Deskripsi Kompetisi</h3>
-                                            <p class="py-3">{{ $kompetisi->deskirpsi_kompetisi }}</p>
+                                            <textarea style=" background: transparent; border: none;" readonly rows="30" class="form-control">{!! $kompetisi->deskirpsi_kompetisi !!}</textarea>
                                         </div><!-- end single-content-item -->
                                         <div class="section-block"></div>
                                     </div><!-- end description -->
                                     <div id="faq" class="page-scroll">
                                         <div class="single-content-item padding-top-40px padding-bottom-40px">
                                             <h3 class="title font-size-20">Persyaratan Peserta</h3>
-                                            <p class="py-3">{{ $kompetisi->persyaratan_peserta }}</p>
+                                            <textarea  style=" background: transparent; border: none;" readonly rows="10" class="form-control">{!! $kompetisi->persyaratan_peserta !!}</textarea>
                                         </div><!-- end single-content-item -->
                                         <div class="section-block"></div>
                                     </div><!-- end faq -->

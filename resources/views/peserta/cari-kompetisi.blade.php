@@ -176,20 +176,20 @@
                                     <span class="" style="color: crimson">` + row.tgl_akhir + `</span>
                                 </div>
                                 <div class="row">
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <p>
                                         <span class="price__text">Total Hadiah </span><br>
                                         <span class="price__num">Rp.` + row.hadiah + `</span>
                                     </p>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <p>
                                         <span class="price__text">Biaya Pendaftaran </span><br>
                                         <span class="price__num">Rp.` + row.biaya_pendaftaran + `</span>
 
                                     </p>
                                 </div>
-                                <div class="col-sm-6 text-right"> 
+                                <div class="col-sm-4 text-right"> 
                                         <a href="detail-cari-kompetisi/` + row.id + `" class="btn-text">Detail Kompetisi</a>
                                     
                                 </div>

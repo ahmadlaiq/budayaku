@@ -27,7 +27,7 @@
                         <div class="d-flex pb-3 justify-content-between">
                             <div class="info-content">
                                 <p class="info__desc">Total Kompetisi Berlangsung</p>
-                                <h4 class="info__title">{{ kompetisi_berlangsung()->total }} Kompetisi</h4>
+                                <h4 class="info__title">{{ isset(kompetisi_berlangsung()->total) ? kompetisi_berlangsung()->total : 0 }} Kompetisi</h4>
                             </div><!-- end info-content -->
                             <div class="info-icon icon-element bg-4">
                                 <i class="la la-dashboard mr-2"></i>
@@ -44,7 +44,7 @@
                         <div class="d-flex pb-3 justify-content-between">
                             <div class="info-content">
                                 <p class="info__desc">Total Kompetisi Berakhir</p>
-                                <h4 class="info__title">{{ kompetisi_berakhir()->total }} Kompetisi</h4>
+                                <h4 class="info__title">{{ isset(kompetisi_berakhir()->total) ? kompetisi_berakhir()->total : 0 }} Kompetisi</h4>
                             </div><!-- end info-content -->
                             <div class="info-icon icon-element bg-3">
                                 <i class="la la-star"></i>
@@ -61,7 +61,7 @@
                         <div class="d-flex pb-3 justify-content-between">
                             <div class="info-content">
                                 <p class="info__desc">Total Semua Karya</p>
-                                <h4 class="info__title">{{ karya_kompetisi()->total }} Karya</h4>
+                                <h4 class="info__title">{{ isset(karya_kompetisi()->total) ? karya_kompetisi()->total : 0 }} Karya</h4>
                             </div><!-- end info-content -->
                             <div class="info-icon icon-element bg-2">
                                 <i class="la la-envelope"></i>
@@ -78,7 +78,7 @@
                         <div class="d-flex pb-3 justify-content-between">
                             <div class="info-content">
                                 <p class="info__desc">Total Karya Mingguan</p>
-                                <h4 class="info__title">{{ kompetisi_mingguan()->total }} Karya</h4>
+                                <h4 class="info__title">{{ isset(kompetisi_mingguan()->total) ? kompetisi_mingguan()->total : 0 }} Karya</h4>
                             </div><!-- end info-content -->
                             <div class="info-icon icon-element bg-1">
                                 <i class="la la-bookmark-o"></i>

@@ -54,7 +54,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Deskripsi Karya</label>
                                         <textarea readonly class="form-control"
-                                            rows="3">{{ $data->deskripsi }}</textarea>
+                                            rows="3">{!! $data->deskripsi !!}</textarea>
                                     </div>
                                 </div>
                             </div>
