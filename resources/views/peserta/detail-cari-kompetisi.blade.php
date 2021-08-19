@@ -54,7 +54,7 @@
                                         <div class="single-content-item pb-4">
                                             <h3 class="title font-size-26">{{ $kompetisi->judul_kompetisi }}</h3>
                                             <div class="d-flex align-items-center pt-2">
-                                                <p class="card-meta">150 Pengirim</p>
+                                                <p class="card-meta">{{ getTotalPeserta($kompetisi->id) }} Pengirim</p>
                                             </div>
                                         </div><!-- end single-content-item -->
                                         <div class="section-block"></div>
@@ -63,23 +63,23 @@
                                                 <div class="col-lg-6 responsive-column">
                                                     <div class="single-feature-titles mb-3">
                                                         <h3 class="title font-size-16">Total Hadiah</h3>
-                                                        <span class="font-size-13">Rp.{{ $kompetisi->hadiah }}</span>
+                                                        <span class="font-size-13">Rp.{{ number_format($kompetisi->hadiah,2) }}</span>
                                                     </div>
                                                     <div class="section-block"></div>
                                                     <div class="single-feature-titles my-3">
                                                         <h3 class="title font-size-15 font-weight-medium">Biaya Pendaftaran</h3>
-                                                        <span class="font-size-13">Rp.{{ $kompetisi->biaya_pendaftaran }}</span>
+                                                        <span class="font-size-13">Rp.{{ number_format($kompetisi->biaya_pendaftaran,2) }}</span>
                                                     </div>
                                                 </div><!-- end col-lg-6 -->
                                                 <div class="col-lg-6 responsive-column">
                                                     <div class="single-feature-titles mb-3">
                                                         <h3 class="title font-size-16">Tanggal Mulai</h3>
-                                                        <span class="font-size-13">{{ $kompetisi->tgl_mulai }}</span>
+                                                        <span class="font-size-13">{{ date('d F Y', strtotime($kompetisi->tgl_mulai)) }}</span>
                                                     </div>
                                                     <div class="section-block"></div>
                                                     <div class="single-feature-titles my-3">
                                                         <h3 class="title font-size-15 font-weight-medium">Tanggal Akhir</h3>
-                                                        <span class="font-size-13">{{ $kompetisi->tgl_akhir }}</span>
+                                                        <span class="font-size-13">{{ date('d F Y', strtotime($kompetisi->tgl_akhir)) }}</span>
                                                     </div>
                                                 </div><!-- end col-lg-6 -->
                                                 <div class="col-lg-12">
@@ -105,7 +105,7 @@
                                     <div id="panduan" class="page-scroll">
                                         <div class="single-content-item padding-top-40px padding-bottom-40px">
                                             <h3 class="title font-size-20">Panduan Peserta</h3>
-                                            <p class="py-3"><button class="theme-btn theme-btn-small theme-btn-transparent" type="button"><i class="la la-download mr-1"></i> Unduh Panduan</button></p>
+                                            <p class="py-3"><a href="{{ url('download_panduan/'.$kompetisi->panduan) }}" class="theme-btn theme-btn-small theme-btn-transparent" type="button"><i class="la la-download mr-1"></i> Unduh Panduan</a></p>
                                         </div><!-- end single-content-item -->
                                         <div class="section-block"></div>
                                     </div><!-- end faq -->

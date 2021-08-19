@@ -64,3 +64,6 @@ GROUP BY
 	tb.penyelenggara_id";
     return  DB::table( DB::raw("($sql) AS a"))->first();
 }
+function getTotalPeserta($id){
+    return DB::table('karya')->where('kompetisi_id', $id)->count();
+}
