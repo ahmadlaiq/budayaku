@@ -6,7 +6,7 @@
         <div class="author-content">
             <div class="d-flex align-items-center"> 
                 <div class="logo ml-5">
-                    <a href="/"><img src={{ asset("/images/logo-hor.png")}} alt="logo" height="30"></a>
+                    <a href="/"><img src={{ asset("/images/logo-horizontal.png")}} alt="logo" height="30"></a>
                 </div>
                 {{-- <div class="author-bio">
                     <h4 class="author__title">Budayaku.net </h4>
