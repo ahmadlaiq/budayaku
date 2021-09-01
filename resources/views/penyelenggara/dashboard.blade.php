@@ -93,4 +93,12 @@
             </div><!-- end row -->
         </div>
     </div><!-- end dashboard-bread -->
+    <div class="col-lg-7">
+        <div class="copy-right padding-top-30px">
+            <p class="copy__desc">
+                &copy; Copyright Budayaku 2021. Made with
+                <span class="la la-heart"></span> by <a href="https://instagram.com/budayaku_net">Tim Budayaku</a>
+            </p>
+        </div><!-- end copy-right -->
+    </div><!-- end col-lg-7 -->
     @endsection

@@ -65,22 +65,12 @@
                 <div class="col-lg-7">
                     <div class="copy-right padding-top-30px">
                         <p class="copy__desc">
-                            © Copyright Trizen 2020. Made with
-                            <span class="la la-heart"></span> by <a
-                                href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
+                            &copy; Copyright Budayaku 2021. Made with
+                            <span class="la la-heart"></span> by <a href="https://instagram.com/budayaku_net">Tim Budayaku</a>
                         </p>
                     </div><!-- end copy-right -->
                 </div><!-- end col-lg-7 -->
-                <div class="col-lg-5">
-                    <div class="copy-right-content text-right padding-top-30px">
-                        <ul class="social-profile">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-github"></i></a></li>
-                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                        </ul>
-                    </div><!-- end copy-right-content -->
-                </div><!-- end col-lg-5 -->
+                
             </div><!-- end row -->
         </div><!-- end container-fluid -->
     </div><!-- end dashboard-main-content -->
@@ -202,7 +192,7 @@
                                     </p>
                                 </div>
                                 <div class="col-sm-4 text-right">
-                                        <a type="button" class="btn-text detail-kompetiri">Lihat Detail</a> | 
+                                        <a type="button" class="btn-text detail-kompetiri">Detail</a> | 
                                         <a href="daftar/karya/per_kompetisi/` + row.id + `" class="btn-text">Lihat Karya</a>
                                     
                                 </div>
