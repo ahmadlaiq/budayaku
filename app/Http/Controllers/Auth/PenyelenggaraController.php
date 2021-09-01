@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Validator;
 use Session;
+use DB;
 
 class PenyelenggaraController extends Controller
 {
@@ -109,5 +110,21 @@ class PenyelenggaraController extends Controller
             Session::flash('success', 'Register berhasil! Silahkan login untuk mengakses dashboard');
             return redirect()->route('penyelenggara.login');
         }
+    }
+
+    public function update_profile(Request $request){
+        $getData = DB::table('penyelenggara')->where('id', Auth::guard('penyelenggara')->user()->id)->first();
+        $pw = isset($request->password) ?  Hash::make($request->password) : $getData->password;
+        DB::table('penyelenggara')
+        ->where('id', Auth::guard('penyelenggara')->user()->id)
+        ->update([
+            'nama_lengkap' => $request->nama_lengkap,
+            'email' => $request->email,
+            'alamat' => $request->alamat,
+            'no_telepon' => $request->no_telepon,
+            'password' => $pw,
+        ]);
+
+        return redirect()->back();
     }
 }

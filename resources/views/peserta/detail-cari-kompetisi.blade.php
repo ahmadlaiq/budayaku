@@ -62,6 +62,10 @@
                                             <div class="row">
                                                 <div class="col-lg-6 responsive-column">
                                                     <div class="single-feature-titles mb-3">
+                                                        <h3 class="title font-size-16">Kategori Kompetisi</h3>
+                                                        <span class="font-size-13">{{ $kompetisi->kategori_status }}</span>
+                                                    </div>
+                                                    <div class="single-feature-titles mb-3">
                                                         <h3 class="title font-size-16">Total Hadiah</h3>
                                                         <span class="font-size-13">Rp.{{ number_format($kompetisi->hadiah,2) }}</span>
                                                     </div>

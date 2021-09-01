@@ -32,12 +32,12 @@ class BuatKompetisiController extends Controller
 
         $this->saveKompetisi($request->all(), $panduanName, $surat_pernyataanName, $posterName);
 
-        //return dd(Auth::guard('penyelenggara'));
     	return redirect()->route('penyelenggara.dashboard');
     }
 
     protected function saveKompetisi(array $data, $panduan = null, $surat_pernyataan = null, $poster = null)
     {
+        // dd($data);
         return Kompetisi::create([
             'judul_kompetisi'      => $data['judul_kompetisi'],
             'deskirpsi_kompetisi'  => $data['deskirpsi_kompetisi'],
@@ -46,10 +46,11 @@ class BuatKompetisiController extends Controller
             'biaya_pendaftaran'    => $data['biaya_pendaftaran'],
             'tgl_mulai'            => $data['tgl_mulai'],
             'tgl_akhir'            => $data['tgl_akhir'],
+            'kategori_status'      => $data['kategori_status'],
             'panduan'              => $panduan,
             'surat_pernyataan'     => $surat_pernyataan,
             'poster'               => $poster,
             'penyelenggara_id'     => Auth::guard('penyelenggara')->user()->id
-        ]);
+            ]);
     }
 }
