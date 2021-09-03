@@ -145,7 +145,7 @@
                             '<option value="">Pilih Peringkat</option>' : '<option value="' +
                             row.status_juara + '">Juara ' + row.status_juara + '</option>';
                         option +=
-                            '<option value="">Tidak Juara</option><option value="1">Juara 1</option> <option value="2">Juara 2</option> <option value="3">Juara 3</option> </select>';
+                            '<option value="">Tidak Juara</option> <option value="1">Juara 1</option> <option value="2">Juara 2</option> <option value="3">Juara 3</option> <option value="Lolos Semi Final">Lolos Semi Final</option> <option value="Lolos Final">Lolos Final</option> <option value="Tidak Lolos">Tidak Lolos</option> </select>';
                         var select = '<select class="form-control select_peringkat">' + option +
                             '</option>';
                         return select
