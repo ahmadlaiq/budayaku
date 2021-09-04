@@ -101,16 +101,21 @@ class CariKompetisiController extends Controller
         $this->saveKarya($request->all(), $berkas_pendaftaranName, $gambar_karyaName, $file_name_bayar);
 
         //return dd(Auth::guard('penyelenggara'));
-    	return redirect()->route('peserta.dashboard');
+        return redirect()->intended('/peserta/cari-kompetisi');
     }
     
     protected function saveKarya(array $data, $berkas_pendaftaran = null, $gambar_karyaName = null, $file_name_bayar)
     {
         if(function_exists('date_default_timezone_set')) date_default_timezone_set('Asia/Jakarta');
         $date = date_create(now());
+        $arr = '<iframe width="560" height="315" src="https://www.youtube.com/embed/';
+        $arr .= substr($data['link_youtube'],17);
+        $arr .= '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        $link_youtube = $arr;
+        // dd($arr);
         return Karya::create([
             'judul_karya'          => $data['judul_karya'],
-            'link_youtube'         => $data['link_youtube'],
+            'link_youtube'         => $link_youtube,
             'deskripsi'            => $data['deskripsi'],
             'gambar_karya'         => $gambar_karyaName,
             'berkas_pendaftaran'   => $berkas_pendaftaran,
