@@ -22,6 +22,7 @@ Route::get('peserta/login', 'Auth\PesertaController@LoginPage')->name('peserta.l
 Route::post('peserta/login', 'Auth\PesertaController@Login');
 Route::get('peserta/register', 'Auth\PesertaController@RegisterPage')->name('peserta.register');
 Route::post('peserta/register', 'Auth\PesertaController@Register');
+Route::put('admin/updatesetting{User}', 'Admin\ProfilController@Setting')->name('admin.updatesetting');
 
 //Auth Penyelenggara
 Route::get('penyelenggara/login', 'Auth\PenyelenggaraController@LoginPage')->name('penyelenggara.login');
@@ -66,6 +67,7 @@ Route::get('peserta/kompetisi-saya', 'Peserta\KompetisiSayaController@KompetisiS
 Route::get('peserta/pengumuman', 'Peserta\PengumumanController@PengumumanPage')->name('peserta.pengumuman');
 Route::get('peserta/bantuan', 'Peserta\BantuanController@BantuanPage')->name('peserta.bantuan');
 Route::get('peserta/pengaturan', 'Peserta\PengaturanController@PengaturanPage')->name('peserta.pengaturan');
+
 Route::get('read_all/notif', 'Peserta\CariKompetisiController@read_all')->name('read_notif');
 Route::get('peserta/aturkompetisi', 'Peserta\CariKompetisiController@CariKompetisiPage')->name('peserta.aturkompetisi');
 Route::get('peserta/detail/karya/{id}', 'Peserta\CariKompetisiController@detail_karya')->name('peserta.detail.karya');

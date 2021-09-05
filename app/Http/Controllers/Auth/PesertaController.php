@@ -102,7 +102,7 @@ class PesertaController extends Controller
         $user->password = Hash::make($request->password);
         $user->email_verified_at = \Carbon\Carbon::now();
         $simpan = $user->save();
- 
+
         if($simpan){
             Session::flash('success', 'Register berhasil! Silahkan login untuk mengakses dashboard');
             return redirect()->route('peserta.login');

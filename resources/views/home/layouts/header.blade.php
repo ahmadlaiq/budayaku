@@ -56,9 +56,9 @@
                             <nav>
                                 <ul>
                                     <li><a href="/">Beranda</a></li>
-                                    <li><a href="{{ route('home.pameran') }}">Pameran</a></li>
+                                    <li><a href="{{ route('home.pameran') }}">Galeri</a></li>
                                     <li><a href="{{ route('home.kompetisi') }}">Kompetisi</a></li>
-									<li><a href="{{ route('home.tentangkami') }}">Tentang Kami</a></li>  
+									<li><a href="{{ route('home.tentangkami') }}">Tentang Kami</a></li> 
                                 </ul>
                             </nav>
                         </div><!-- end main-menu-content -->

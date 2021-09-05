@@ -36,7 +36,7 @@
                                                 : </b></label>
                                         <div class="col-sm-6">
                                             <select class="ord form-control">
-                                                <option selected value="">Short by default</option>
+                                                <option selected value="">Semua</option>
                                                 <option value="1">Popular Kompetisi</option>
                                                 <option value="2">Biaya Pendaftaran: low to high</option>
                                                 <option value="3">Biaya Pendaftaran: high to low</option>
