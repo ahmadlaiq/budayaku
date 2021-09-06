@@ -12,6 +12,6 @@ class Kompetisi extends model
 
     protected $table = 'kompetisi';
     protected $primaryKey   = "id";
-    protected $fillable = ['id','judul_kompetisi','deskirpsi_kompetisi','hadiah','persyaratan_peserta','biaya_pendaftaran','tgl_mulai','tgl_akhir','poster','panduan','surat_pernyataan','status','penyelenggara_id'];
+    protected $fillable = ['id','judul_kompetisi','deskirpsi_kompetisi','hadiah','persyaratan_peserta','biaya_pendaftaran','tgl_mulai','tgl_akhir','poster','panduan','surat_pernyataan','status','penyelenggara_id','kategori_status'];
 
 }

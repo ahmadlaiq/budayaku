@@ -22,7 +22,7 @@ Route::get('peserta/login', 'Auth\PesertaController@LoginPage')->name('peserta.l
 Route::post('peserta/login', 'Auth\PesertaController@Login');
 Route::get('peserta/register', 'Auth\PesertaController@RegisterPage')->name('peserta.register');
 Route::post('peserta/register', 'Auth\PesertaController@Register');
-Route::put('admin/updatesetting{User}', 'Admin\ProfilController@Setting')->name('admin.updatesetting');
+Route::post('update/profile/peserta', 'Auth\PesertaController@update_profile')->name('peserta.update.profile');
 
 //Auth Penyelenggara
 Route::get('penyelenggara/login', 'Auth\PenyelenggaraController@LoginPage')->name('penyelenggara.login');
@@ -51,6 +51,15 @@ Route::group(['middleware' => 'CekPenyelenggaraMiddleware'], function () {
     Route::post('penyelenggara/set_juara', 'Penyelenggara\ListKaryaController@set_juara')->name('set_juara');
     Route::get('penyelenggara/daftar/karya/per_kompetisi/download/gambar_karya/{file}', 'Penyelenggara\AturKompetisiController@download_gambar');
     Route::get('penyelenggara/daftar/karya/per_kompetisi/download/berkas_daftar/{file}', 'Penyelenggara\AturKompetisiController@download_berkas_daftar');
+
+    Route::post('update/profile', 'Auth\PenyelenggaraController@update_profile')->name('penyelenggara.update.profile');
+    
+    Route::get('penyelenggara.profile', function () {
+        return view('penyelenggara.profile');
+    });
+});
+Route::get('peserta.profile', function () {
+    return view('peserta.profile');
 });
 
 Route::get('/download_poster/{file}', 'Penyelenggara\AturKompetisiController@download_poster');

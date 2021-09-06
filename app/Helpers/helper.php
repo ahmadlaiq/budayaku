@@ -67,3 +67,11 @@ GROUP BY
 function getTotalPeserta($id){
     return DB::table('karya')->where('kompetisi_id', $id)->count();
 }
+
+
+function pengumuman(){
+    $id = Auth::guard('peserta')->user()->id;
+    $data = DB::table('karya')->leftjoin('peserta','peserta.id','karya.peserta_id')->where('karya.peserta_id', $id)->get();
+    return $data;
+}
+
