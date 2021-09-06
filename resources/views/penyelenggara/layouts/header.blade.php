@@ -51,7 +51,7 @@
                                     <a href="#" class="dropdown-toggle" id="userDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <div class="d-flex align-items-center">
                                             <div class="avatar avatar-sm flex-shrink-0 mr-2"><img src={{asset("/images/avatar.jpeg")}} alt="team-img" width="111" height="100"></div>
-                                            <span class="font-size-14 font-weight-bold">Ahmad Nurul Laiq</span>
+                                            <span class="font-size-14 font-weight-bold">{{  Auth::guard('penyelenggara')->user()->nama_lengkap }}</span>
                                         </div>
                                     </a>
                                     <div class="dropdown-menu dropdown-reveal dropdown-menu-md dropdown-menu-right">
