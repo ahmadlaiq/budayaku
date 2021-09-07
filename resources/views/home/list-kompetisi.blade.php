@@ -20,20 +20,8 @@
                     <img src="{{ asset("poster/".$d->poster) }}" alt="testimonial image">
                 </div>
                 <div class="author-bio">
-                    <a href="#" class="author__title">Pemkab Gresik</a>
+                    <p href="#" class="author__title">Pemkab Gresik</p>
                 </div>
-            </div>
-            <div class="post-share">
-                <ul>
-                    <li>
-                        <i class="la la-share icon-element"></i>
-                        <ul class="post-share-dropdown d-flex align-items-center">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                        </ul>
-                    </li>
-                </ul>
             </div>
         </div>
     </div><!-- end card-item -->

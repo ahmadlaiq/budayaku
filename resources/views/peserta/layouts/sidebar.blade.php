@@ -22,7 +22,6 @@
                 <li class="{{ Route::is('peserta.pengumuman') ? 'page-active' : '' }}"><a href="{{ route('peserta.pengumuman') }}"><i class="la la-trophy mr-2 text-color-5"></i>Pengumuman</a></li>
                 {{-- <li class="{{ Route::is('peserta.bantuan') ? 'page-active' : '' }}"><a href="{{ route('peserta.bantuan') }}"><i class="la la-heart mr-2 text-color-6"></i>Bantuan</a></li> --}}
                 <li class="{{ Route::is('peserta.pengaturan') ? 'page-active' : '' }}"><a href="{{ route('peserta.pengaturan') }}"><i class="la la-cog mr-2 text-color-10"></i>Pengaturan</a></li>
-                <li class="{{ Route::is('penyelenggara.pengaturan') ? 'page-active' : '' }}"><a href="{{ url('peserta.profile') }}"><i class="la la-user mr-2 text-color-10"></i>Profile</a></li>
                 <li><a href="{{ route('peserta.logout') }}"><i class="la la-power-off mr-2 text-color-11"></i>Keluar</a></li>
             </ul>
         </div><!-- end sidebar-menu-wrap -->

@@ -17,7 +17,6 @@
                 <li class="{{ Route::is('penyelenggara.aturkompetisi', 'list_karya.show') ? 'page-active' : '' }}"><a href="{{ route('penyelenggara.aturkompetisi') }}"><i class="la la-certificate mr-2 text-color-4"></i>Atur Kompetisi</a></li>
                 <li class="{{ Route::is('penyelenggara.pengumuman') ? 'page-active' : '' }}"><a href="{{ route('penyelenggara.pengumuman') }}"><i class="la la-trophy mr-2 text-color-5"></i>Pengumuman</a></li>
                 <li class="{{ Route::is('penyelenggara.pengaturan') ? 'page-active' : '' }}"><a href="{{ route('penyelenggara.pengaturan') }}"><i class="la la-cog mr-2 text-color-10"></i>Pengaturan</a></li>
-                <li class="{{ Route::is('penyelenggara.pengaturan') ? 'page-active' : '' }}"><a href="{{ url('penyelenggara.profile') }}"><i class="la la-user mr-2 text-color-10"></i>Profile</a></li>
                 <li><a href="{{ route('penyelenggara.logout')}}"><i class="la la-power-off mr-2 text-color-11"></i>Keluar</a></li>
             </ul>
         </div><!-- end sidebar-menu-wrap -->

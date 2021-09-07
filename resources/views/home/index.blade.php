@@ -210,20 +210,8 @@
                                 <img src="{{ asset("poster/".$d->poster) }}" alt="testimonial image">
                             </div>
                             <div class="author-bio">
-                                <a href="#" class="author__title">Pemkab Gresik</a>
+                                <p href="#" class="author__title">Pemkab Gresik</p>
                             </div>
-                        </div>
-                        <div class="post-share">
-                            <ul>
-                                <li>
-                                    <i class="la la-share icon-element"></i>
-                                    <ul class="post-share-dropdown d-flex align-items-center">
-                                        <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                                        <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div><!-- end card-item -->
@@ -314,7 +302,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading text-center">
-                    <h2 class="sec__title">Pertanyaan Umum</h2>
+                    <h2 class="sec__title" id="cotact-us">Pertanyaan Umum</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
@@ -418,7 +406,7 @@
                     </div><!-- end card -->
                 </div>
                 <div class="accordion-help-text pt-2">
-                    <p class="font-size-14 font-weight-regular">Ada Pertanyaan? Silahkan kunjungi <a href="#" class="color-text">Help center</a> or <a href="#" class="color-text">Contact Us</a></p>
+                    <p class="font-size-14 font-weight-regular">Ada Pertanyaan? Silahkan kunjungi <a href="#" class="color-text">Help center</a> or <a href="#cotact-us" class="color-text">Contact Us</a></p>
                 </div>
             </div><!-- end col-lg-7 -->
             <div class="col-lg-5">

@@ -59,14 +59,14 @@
                                             <h6 class="title text-uppercase">Welcome!</h6>
                                         </div>
                                         <div class="list-group drop-reveal-list user-drop-reveal-list">
-                                            <a href="admin-dashboard-settings.html" class="list-group-item list-group-item-action">
+                                            <a href="{{ url('penyelenggara.profile') }}" class="list-group-item list-group-item-action">
                                                 <div class="msg-body">
                                                     <div class="msg-content">
                                                         <h3 class="title"><i class="la la-user mr-2"></i>Profil</h3>
                                                     </div>
                                                 </div><!-- end msg-body -->
                                             </a>
-                                            <a href="admin-dashboard-settings.html" class="list-group-item list-group-item-action">
+                                            <a href="{{ route('penyelenggara.pengaturan') }}" class="list-group-item list-group-item-action">
                                                 <div class="msg-body">
                                                     <div class="msg-content">
                                                         <h3 class="title"><i class="la la-gear mr-2"></i>Pengaturan</h3>
