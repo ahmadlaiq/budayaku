@@ -89,4 +89,5 @@ Route::get('home/pilih-daftar', function () {return view('home.pilih-daftar');})
 Route::get('home/pameran', 'PameranController@index')->name('home.pameran');
 Route::get('home/kompetisi', 'KompetisiController@index')->name('home.kompetisi');
 Route::get('home/tentang-kami', 'HomeController@index')->name('home.tentangkami');
+Route::get('home/kebijakan-privasi', 'HomeController@kebijakan')->name('home.kebijakanprivasi');
 

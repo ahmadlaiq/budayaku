@@ -30,7 +30,7 @@
                         <li><a href="{{ route('home.kompetisi') }}">Kompetisi</a></li>
                         <li><a href="{{ route('home.tentangkami') }}">Tentang Kami</a></li>
                         <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="{{ route('home.kebijakanprivasi') }}">Kebijakan Privasi</a></li>
                     </ul>
                 </div><!-- end footer-item -->
             </div><!-- end col-lg-3 -->

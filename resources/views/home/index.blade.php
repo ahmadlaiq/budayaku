@@ -322,9 +322,8 @@
                         <div id="faqCollapseOne" class="collapse show" aria-labelledby="faqHeadingOne"
                             data-parent="#accordionExample">
                             <div class="card-body">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered alteration in some form, by injected humour, or randomised words
-                                    which don't look even slightly believable.</p>
+                                <p>Tentu website Budayaku terpercaya. 
+                                    Para penyelenggara kompetisi yang mengusulkan kompetisi menandatangani surat bermaterai yang dilindungi hukum, jadi pastinya website ini terpercaya.</p>
                             </div>
                         </div>
                     </div><!-- end card -->
@@ -341,9 +340,7 @@
                         <div id="faqCollapseTwo" class="collapse" aria-labelledby="faqHeadingTwo"
                             data-parent="#accordionExample">
                             <div class="card-body">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered alteration in some form, by injected humour, or randomised words
-                                    which don't look even slightly believable.</p>
+                                <p>Cukup masuk ke menu login, pilih daftar akun, pilih sebagai penyelenggara kompetisi.</p>
                             </div>
                         </div>
                     </div><!-- end card -->
@@ -360,9 +357,7 @@
                         <div id="faqCollapseThree" class="collapse" aria-labelledby="faqHeadingThree"
                             data-parent="#accordionExample">
                             <div class="card-body">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered alteration in some form, by injected humour, or randomised words
-                                    which don't look even slightly believable.</p>
+                                <p>Cukup masuk ke menu login, pilih daftar akun, pilih sebagai peserta kompetisi.</p>
                             </div>
                         </div>
                     </div><!-- end card -->
@@ -379,9 +374,8 @@
                         <div id="faqCollapseFour" class="collapse" aria-labelledby="faqHeadingFour"
                             data-parent="#accordionExample">
                             <div class="card-body">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered alteration in some form, by injected humour, or randomised words
-                                    which don't look even slightly believable.</p>
+                                <p>Semua persyaratan lomba tergantung pada penyelenggara kompetisi, 
+                                    jadi baca dengan teliti syarat dan ketentuan kompetisi yang anda inginkan.</p>
                             </div>
                         </div>
                     </div><!-- end card -->
@@ -398,9 +392,9 @@
                         <div id="faqCollapseFive" class="collapse" aria-labelledby="faqHeadingFive"
                             data-parent="#accordionExample">
                             <div class="card-body">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered alteration in some form, by injected humour, or randomised words
-                                    which don't look even slightly believable.</p>
+                                <p>Penyerahan hadiah cukup mudah, 
+                                    dengan anda mengisi formulir penerimaan hadiah lalu mengirimkan nomor rekening anda, 
+                                    hadiah akan sampai ke tangan anda.</p>
                             </div>
                         </div>
                     </div><!-- end card -->
