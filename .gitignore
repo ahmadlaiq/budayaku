@@ -1,9 +1,12 @@
-public/poster/.DS_Store
-public/.DS_Store
-public/.DS_Store
-public/.DS_Store
-public/berkas_pendaftaran/.DS_Store
-public/gambar_karya/.DS_Store
-public/.DS_Store
-.DS_Store
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
 
