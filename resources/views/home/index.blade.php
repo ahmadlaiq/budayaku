@@ -411,12 +411,13 @@
                         </div><!-- form-title-wrap -->
                         <div class="form-content">
                             <div class="contact-form-action">
-                                <form method="post">
+                                <form method="post" action="{{ url('kirim-email') }}">
+                                @csrf
                                     <div class="input-box">
                                         <label class="label-text">Nama Kamu</label>
                                         <div class="form-group">
                                             <span class="la la-user form-icon"></span>
-                                            <input class="form-control" type="text" name="text" placeholder="Your name">
+                                            <input class="form-control" type="text" name="nama" placeholder="Your name">
                                         </div>
                                     </div>
                                     <div class="input-box">
@@ -431,12 +432,12 @@
                                         <label class="label-text">Pesan</label>
                                         <div class="form-group">
                                             <span class="la la-pencil form-icon"></span>
-                                            <textarea class="message-control form-control" name="message"
+                                            <textarea class="message-control form-control" name="pesan"
                                                 placeholder="Write message"></textarea>
                                         </div>
                                     </div>
                                     <div class="btn-box">
-                                        <button type="button" class="theme-btn">Kirim Pesan</button>
+                                        <button type="submit" class="theme-btn">Kirim Pesan</button>
                                     </div>
                                 </form>
                             </div><!-- end contact-form-action -->

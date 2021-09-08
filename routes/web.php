@@ -34,7 +34,9 @@ Route::post('penyelenggara/register', 'Auth\PenyelenggaraController@Register');
 //Auth Admin
 Route::get('admin/p', 'Auth\AdminController@LoginPage')->name('admin.login');
 
-
+//send-mail
+Route::post('kirim-email','SendMailCController@index');
+// end
 //Penyelenggara
 Route::group(['middleware' => 'CekPenyelenggaraMiddleware'], function () {
     Route::get('penyelenggara/logout', 'Auth\PenyelenggaraController@Logout')->name('penyelenggara.logout');

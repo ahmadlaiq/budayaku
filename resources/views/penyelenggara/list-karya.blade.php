@@ -41,6 +41,7 @@
                                                     <tr class="text-center">
                                                         <th scope="col">No</th>
                                                         <th scope="col">Nama Peserta</th>
+                                                        <th scope="col">Email Peserta</th>
                                                         <th scope="col">Judul Karya</th>
                                                         <th scope="col">Pilih Sebagai Juara</th>
                                                         <th scope="col">Action</th>
@@ -131,6 +132,10 @@
                 },
                 {
                     data: 'nama_lengkap',
+                    className: 'text-center'
+                },
+                {
+                    data: 'email_peserta',
                     className: 'text-center'
                 },
                 {

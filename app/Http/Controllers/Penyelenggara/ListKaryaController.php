@@ -54,7 +54,7 @@ class ListKaryaController extends Controller
 
     public function dataDT(Request $request)
     {
-        $data = DB::table('karya AS ta')->join('peserta AS tb','tb.id','ta.peserta_id')->select('tb.nama_lengkap', 'ta.*','ta.id AS id_karya')->where('ta.kompetisi_id',$request->id)->get();
+        $data = DB::table('karya AS ta')->join('peserta AS tb','tb.id','ta.peserta_id')->select('tb.email AS email_peserta','tb.nama_lengkap', 'ta.*','ta.id AS id_karya')->where('ta.kompetisi_id',$request->id)->get();
         return Datatables::of($data)
         ->addColumn('action', function($row){
             $btn = '';
